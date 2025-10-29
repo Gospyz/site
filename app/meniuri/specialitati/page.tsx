@@ -11,6 +11,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Edit, Plus, Save, Trash2, X } from "lucide-react"
+import Navigation from "../../navigation/navigation"
 
 // Tipuri pentru produse
 type Product = {
@@ -108,16 +109,7 @@ export default function MeniuSpecialitati() {
       <div className="h-6 w-full bg-amber-400"></div>
 
       {/* Navigation */}
-      <nav className="bg-black text-white py-4">
-        <div className="container mx-auto px-4 flex justify-between">
-          <Link href="/" className="text-2xl font-bold text-amber-400">
-            Restaurant
-          </Link>
-          <Link href="/meniuri" className="text-amber-100 hover:text-amber-400 transition">
-            Înapoi la meniuri
-          </Link>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Header */}
       <div className="relative h-[200px] w-full">
@@ -134,16 +126,16 @@ export default function MeniuSpecialitati() {
 
       {/* Main Content */}
       <section className="py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div className="container mx-auto px-4" id="test1">
+          <div className="grid grid-cols-1 gap-8" id="test2">
             {/* Formular adăugare/editare */}
-            <div className="lg:col-span-1">
+            {/*<div className="lg:col-span-1">
               <div className="bg-white p-6 rounded-lg shadow-md">
                 <h2 className="text-2xl font-semibold mb-6 text-amber-800">
                   {isEditing ? "Editare produs" : "Adaugă un produs nou"}
                 </h2>
 
-                <div className="space-y-4">
+              <div className="space-y-4">
                   <div>
                     <Label htmlFor="name">Nume produs *</Label>
                     <Input
@@ -251,12 +243,12 @@ export default function MeniuSpecialitati() {
                   </div>
                 </div>
               </div>
-            </div>
+            </div>*/}
 
             {/* Lista de produse */}
-            <div className="lg:col-span-2">
+            <div>
               <Tabs defaultValue="toate" onValueChange={setSelectedCategory}>
-                <TabsList className="mb-6">
+                <TabsList className="mb-6 mx-auto">
                   <TabsTrigger value="toate">Toate</TabsTrigger>
                   <TabsTrigger value="traditionale">Tradiționale</TabsTrigger>
                   <TabsTrigger value="chef">Specialități Chef</TabsTrigger>

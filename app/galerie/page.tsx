@@ -1,6 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import Navigation from "../navigation/navigation"
 
 // Datele pentru galeria foto
 const galleryImages = [
@@ -67,16 +68,8 @@ export default function GalerieFoto() {
       <div className="h-6 w-full bg-amber-400"></div>
 
       {/* Navigation - Simplified for this page */}
-      <nav className="bg-black text-white py-4">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <Link href="/" className="text-2xl font-bold text-amber-400">
-            Restaurant
-          </Link>
-          <Link href="/" className="text-amber-100 hover:text-amber-400 transition">
-            Înapoi la pagina principală
-          </Link>
-        </div>
-      </nav>
+      <Navigation />
+
 
       {/* Gallery Header */}
       <div className="relative h-[300px] w-full">

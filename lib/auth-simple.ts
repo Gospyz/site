@@ -1,8 +1,5 @@
 import { cookies } from "next/headers"
-
-// Credențiale hardcodate pentru demo
-export const ADMIN_EMAIL = "admin@restaurant.ro"
-export const ADMIN_PASSWORD = "admin123"
+import { ADMIN_EMAIL, ADMIN_PASSWORD } from "./auth-constants"
 
 // Funcție simplificată pentru verificarea credențialelor
 export function verifyCredentials(email: string, password: string) {
@@ -14,7 +11,7 @@ export function verifyCredentials(email: string, password: string) {
 
 // Funcție pentru verificarea sesiunii
 export async function getSession() {
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const sessionCookie = cookieStore.get("admin-session")
 
   if (!sessionCookie) {
@@ -41,7 +38,8 @@ export async function createSession(user: any) {
     expires: Date.now() + 24 * 60 * 60 * 1000, // 24 ore
   }
 
-  cookies().set({
+  const cookieStore = await cookies()
+  cookieStore.set({
     name: "admin-session",
     value: JSON.stringify(sessionData),
     httpOnly: true,
@@ -55,5 +53,6 @@ export async function createSession(user: any) {
 
 // Funcție pentru ștergerea sesiunii
 export async function deleteSession() {
-  cookies().delete("admin-session")
+  const cookieStore = await cookies()
+  cookieStore.delete("admin-session")
 }

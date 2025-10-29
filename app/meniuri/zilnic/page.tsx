@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import Navigation from "../../navigation/navigation"
 
 // Tipuri pentru produse
 type Product = {
@@ -45,16 +46,8 @@ export default function MeniuZilnic() {
       <div className="h-6 w-full bg-amber-400"></div>
 
       {/* Navigation */}
-      <nav className="bg-black text-white py-4">
-        <div className="container mx-auto px-4 flex justify-between">
-          <Link href="/" className="text-2xl font-bold text-amber-400">
-            Restaurant
-          </Link>
-          <Link href="/meniuri" className="text-amber-100 hover:text-amber-400 transition">
-            Înapoi la meniuri
-          </Link>
-        </div>
-      </nav>
+      <Navigation />
+
 
       {/* Header */}
       <div className="relative h-[200px] w-full">
@@ -72,83 +65,65 @@ export default function MeniuZilnic() {
       {/* Main Content */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {/* Formular adăugare/editare */}
-            <div className="lg:col-span-1">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h2 className="text-2xl font-semibold mb-4 text-amber-800">Meniu Zilnic</h2>
-                <p className="text-gray-600 mb-4">
-                  Aici puteți vedea oferta noastră zilnică de preparate. Meniul este actualizat regulat de către
-                  administratorii restaurantului.
-                </p>
-                <div className="p-4 bg-amber-50 rounded-lg border border-amber-200">
-                  <p className="text-sm text-amber-800">
-                    <strong>Notă:</strong> Pentru a adăuga sau edita produse, vă rugăm să accesați panoul de
-                    administrare.
-                  </p>
-                </div>
-              </div>
-            </div>
+          <div className="grid grid-cols-1 gap-8">
 
             {/* Lista de produse */}
-            <div className="lg:col-span-2">
-              <Tabs defaultValue="toate" onValueChange={setSelectedCategory}>
-                <TabsList className="mb-6">
-                  <TabsTrigger value="toate">Toate</TabsTrigger>
-                  <TabsTrigger value="ciorbe">Ciorbe și Supe</TabsTrigger>
-                  <TabsTrigger value="felPrincipal">Fel Principal</TabsTrigger>
-                  <TabsTrigger value="garnituri">Garnituri</TabsTrigger>
-                  <TabsTrigger value="desert">Desert</TabsTrigger>
-                </TabsList>
+            <Tabs defaultValue="toate" onValueChange={setSelectedCategory}>
+              <TabsList className="mb-6 mx-auto">
+                <TabsTrigger value="toate">Toate</TabsTrigger>
+                <TabsTrigger value="ciorbe">Ciorbe și Supe</TabsTrigger>
+                <TabsTrigger value="felPrincipal">Fel Principal</TabsTrigger>
+                <TabsTrigger value="garnituri">Garnituri</TabsTrigger>
+                <TabsTrigger value="desert">Desert</TabsTrigger>
+              </TabsList>
 
-                <TabsContent value={selectedCategory} className="mt-0">
-                  {filteredProducts.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {filteredProducts.map((product) => (
-                        <Card key={product.id}>
-                          <div className="relative aspect-video">
-                            <Image
-                              src={product.image || "/placeholder.svg?height=200&width=300&text=Preparat"}
-                              alt={product.name}
-                              fill
-                              className="object-cover"
-                            />
+              <TabsContent value={selectedCategory} className="mt-0">
+                {filteredProducts.length > 0 ? (
+                  <div className="grid grid-cols-1 gap-6">
+                    {filteredProducts.map((product) => (
+                      <Card key={product.id}>
+                        <div className="relative aspect-video">
+                          <Image
+                            src={product.image || "/placeholder.svg?height=200&width=300&text=Preparat"}
+                            alt={product.name}
+                            fill
+                            className="object-cover"
+                          />
+                        </div>
+                        <CardContent className="p-4">
+                          <div className="flex justify-between items-start mb-2">
+                            <h3 className="text-lg font-semibold">{product.name}</h3>
+                            <p className="font-bold text-amber-700">{product.price} lei</p>
                           </div>
-                          <CardContent className="p-4">
-                            <div className="flex justify-between items-start mb-2">
-                              <h3 className="text-lg font-semibold">{product.name}</h3>
-                              <p className="font-bold text-amber-700">{product.price} lei</p>
-                            </div>
-                            <p className="text-sm text-gray-500 capitalize mb-2">
-                              {product.category === "ciorbe"
-                                ? "Ciorbă/Supă"
-                                : product.category === "felPrincipal"
-                                  ? "Fel Principal"
-                                  : product.category === "garnituri"
-                                    ? "Garnitură"
-                                    : "Desert"}
-                            </p>
-                            {product.description && <p className="text-sm text-gray-700 mb-4">{product.description}</p>}
-                            <div className="flex gap-2 mt-2">
-                              <Button variant="outline" size="sm">
-                                Vezi detalii
-                              </Button>
-                            </div>
-                          </CardContent>
-                        </Card>
-                      ))}
-                    </div>
-                  ) : (
-                    <div className="text-center py-12 bg-gray-50 rounded-lg border border-dashed">
-                      <p className="text-gray-500 mb-4">Nu există produse în această categorie.</p>
-                      <p className="text-sm text-gray-400">
-                        Folosiți formularul din stânga pentru a adăuga produse noi.
-                      </p>
-                    </div>
-                  )}
-                </TabsContent>
-              </Tabs>
-            </div>
+                          <p className="text-sm text-gray-500 capitalize mb-2">
+                            {product.category === "ciorbe"
+                              ? "Ciorbă/Supă"
+                              : product.category === "felPrincipal"
+                                ? "Fel Principal"
+                                : product.category === "garnituri"
+                                  ? "Garnitură"
+                                  : "Desert"}
+                          </p>
+                          {product.description && <p className="text-sm text-gray-700 mb-4">{product.description}</p>}
+                          <div className="flex gap-2 mt-2">
+                            <Button variant="outline" size="sm">
+                              Vezi detalii
+                            </Button>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="text-center py-12 bg-gray-50 rounded-lg border border-dashed">
+                    <p className="text-gray-500 mb-4">Nu există produse în această categorie.</p>
+                    <p className="text-sm text-gray-400">
+                      Folosiți formularul din stânga pentru a adăuga produse noi.
+                    </p>
+                  </div>
+                )}
+              </TabsContent>
+            </Tabs>
           </div>
         </div>
       </section>

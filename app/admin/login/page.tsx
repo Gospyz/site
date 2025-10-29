@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
 import { Alert, AlertDescription } from "@/components/ui/alert"
-import { ADMIN_EMAIL, ADMIN_PASSWORD } from "@/lib/auth-simple"
+import { ADMIN_EMAIL, ADMIN_PASSWORD } from "@/lib/auth-constants"
 
 export default function LoginPage() {
   const router = useRouter()

@@ -2,6 +2,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
+import Navigation from "../navigation/navigation"
 
 export default function Contact() {
   return (
@@ -10,21 +11,15 @@ export default function Contact() {
       <div className="h-6 w-full bg-amber-400"></div>
 
       {/* Navigation - Simplified for this page */}
-      <nav className="bg-black text-white py-4">
-        <div className="container mx-auto px-4">
-          <a href="/" className="text-2xl font-bold text-amber-400">
-            Restaurant
-          </a>
-        </div>
-      </nav>
+      <Navigation />
 
       {/* Contact Section */}
       <section className="py-12">
         <div className="container mx-auto px-4">
           <h1 className="text-3xl md:text-4xl font-bold mb-8 text-center">Contact</h1>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
+          <div className="grid grid-cols-1 gap-12">
+            <div className="mx-auto">
               <h2 className="text-2xl font-semibold mb-4 text-amber-800">Informații de Contact</h2>
 
               <div className="space-y-4 text-gray-700">
@@ -101,7 +96,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div>
+            {/*} <div>
               <h2 className="text-2xl font-semibold mb-4 text-amber-800">Trimite-ne un Mesaj</h2>
 
               <form className="space-y-4">
@@ -142,7 +137,7 @@ export default function Contact() {
 
                 <Button className="w-full bg-amber-700 hover:bg-amber-800">Trimite Mesaj</Button>
               </form>
-            </div>
+            </div>*/}
           </div>
         </div>
       </section>

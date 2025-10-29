@@ -2,83 +2,17 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ChevronDown } from "lucide-react"
-import { useState } from "react"
+import Navigation from "./navigation/navigation"
 
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false)
   return (
     <main className="flex min-h-screen flex-col">
       {/* Top gold banner */}
       <div className="h-6 w-full bg-amber-400"></div>
 
       {/* Navigation */}
-      <nav className="bg-black text-white">
-        <div className="container mx-auto flex items-center justify-between px-4 py-2">
-          <div className="flex-shrink-0">
-            <Link href="/">
-              <Image src="/logo.png" alt="Restaurant Logo" width={180} height={60} className="h-auto" />
-            </Link>
-          </div>
+      <Navigation />
 
-          <div className="hidden md:flex items-center space-x-8">
-            <Link href="/" className="text-amber-100 hover:text-amber-400 transition">
-              Acasa
-            </Link>
-            <div className="relative group">
-              <button
-                className="flex items-center text-amber-100 hover:text-amber-400 transition"
-                onClick={() => setMenuOpen(!menuOpen)}
-              >
-                Meniuri <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
-              <div
-                className={`absolute left-0 mt-2 w-48 bg-black shadow-lg rounded-md ${menuOpen ? "block" : "hidden group-hover:block"} z-10`}
-              >
-                <Link
-                  href="/meniuri/zilnic"
-                  className="block px-4 py-2 text-sm text-amber-100 hover:bg-amber-900 hover:text-amber-400"
-                >
-                  Meniu Zilnic
-                </Link>
-                <Link
-                  href="/meniuri/specialitati"
-                  className="block px-4 py-2 text-sm text-amber-100 hover:bg-amber-900 hover:text-amber-400"
-                >
-                  Specialități
-                </Link>
-                <Link
-                  href="/meniuri/bauturi"
-                  className="block px-4 py-2 text-sm text-amber-100 hover:bg-amber-900 hover:text-amber-400"
-                >
-                  Băuturi
-                </Link>
-              </div>
-            </div>
-            <Link href="/livrari-la-domiciliu" className="text-amber-100 hover:text-amber-400 transition">
-              Livrari la domiciliu
-            </Link>
-            <Link href="/galerie" className="text-amber-100 hover:text-amber-400 transition">
-              Galerie foto
-            </Link>
-            <Link href="/contact" className="text-amber-100 hover:text-amber-400 transition">
-              Contact
-            </Link>
-          </div>
-
-          <button className="md:hidden text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-            </svg>
-          </button>
-        </div>
-      </nav>
 
       {/* Hero Section */}
       <div className="relative h-[500px] w-full">

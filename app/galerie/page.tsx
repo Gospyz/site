@@ -1,7 +1,10 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import Navigation from "../navigation/navigation"
+import { useState } from "react"
 
 // Datele pentru galeria foto
 const galleryImages = [
@@ -62,6 +65,7 @@ const galleryImages = [
 ]
 
 export default function GalerieFoto() {
+  const [filteredImages, setFilteredImages] = useState(galleryImages);
   return (
     <main className="flex min-h-screen flex-col">
       {/* Top gold banner */}
@@ -88,16 +92,24 @@ export default function GalerieFoto() {
       <section className="py-8 bg-amber-50">
         <div className="container mx-auto px-4">
           <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="outline" className="bg-amber-700 text-white hover:bg-amber-800">
+            <Button variant="outline" className="bg-amber-700 text-white hover:bg-amber-800"
+            onClick={() => {setFilteredImages(galleryImages)
+            }}>
               Toate
             </Button>
-            <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100">
+            <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100"
+            onClick={() => {setFilteredImages(galleryImages.filter(image => image.category === "interior"))
+            }}>
               Interior
             </Button>
-            <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100">
+            <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100"
+            onClick={() => {setFilteredImages(galleryImages.filter(image => image.category === "preparate"))
+              }}>
               Preparate
             </Button>
-            <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100">
+            <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100"
+            onClick={() => {setFilteredImages(galleryImages.filter(image => image.category === "evenimente"))
+            }}>
               Evenimente
             </Button>
           </div>
@@ -108,7 +120,7 @@ export default function GalerieFoto() {
       <section className="py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            {galleryImages.map((image) => (
+            {filteredImages.map((image) => (
               <div key={image.id} className="group relative overflow-hidden rounded-lg shadow-md h-64">
                 <Image
                   src={image.src || "/placeholder.svg"}
@@ -126,7 +138,7 @@ export default function GalerieFoto() {
       </section>
 
       {/* Upload Section */}
-      <section className="py-12 bg-amber-50">
+      {/*<section className="py-12 bg-amber-50">
         <div className="container mx-auto px-4 max-w-2xl">
           <h2 className="text-2xl font-semibold mb-6 text-amber-800 text-center">Adaugă Imagini Noi</h2>
 
@@ -199,7 +211,7 @@ export default function GalerieFoto() {
             </div>
           </div>
         </div>
-      </section>
+      </section>*/}
 
       {/* Footer */}
       <footer className="bg-black text-white py-6 mt-auto">

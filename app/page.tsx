@@ -26,7 +26,7 @@ export default function Home() {
 
           <div className="max-w-3xl mx-auto space-y-6 text-gray-700">
             <p className="text-lg">
-              Restaurant La Patrascu – locul unde tradiția culinară se întâlnește cu modernitatea într-un cadru primitor
+              Restaurant – locul unde tradiția culinară se întâlnește cu modernitatea într-un cadru primitor
               și relaxant. Cu o un restaurant elegant, terasa generoasă și un meniu diversificat, restaurantul nostru
               este locul unde te poți bucura de o experiență culinară autentică.
             </p>

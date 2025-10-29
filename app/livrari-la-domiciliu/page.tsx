@@ -41,12 +41,12 @@ export default function LivrariLaDomiciliu() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="grid grid-cols-1 gap-12">
             {/* Delivery Info */}
-            <div>
+            <div className="mx-auto  ">
               <h3 className="text-2xl font-semibold mb-6 text-amber-800">Informații Livrare</h3>
 
-              <div className="space-y-6">
+              <div className="grid grid-cols-2 gap-6">
                 <Card>
                   <CardContent className="flex items-start gap-4 p-6">
                     <div className="bg-amber-100 p-3 rounded-full">
@@ -84,13 +84,13 @@ export default function LivrariLaDomiciliu() {
                   </CardContent>
                 </Card>
 
-                <Card>
+                 <Card>
                   <CardContent className="flex items-start gap-4 p-6">
-                    <div className="bg-amber-100 p-3 rounded-full">
-                      <PhoneCall className="h-6 w-6 text-amber-700" />
+                   <div className="bg-amber-100 p-3 rounded-full">
+                    <PhoneCall className="h-6 w-6 text-amber-700" />
                     </div>
                     <div>
-                      <h4 className="font-medium text-lg mb-1">Comenzi Telefonice</h4>
+                    <h4 className="font-medium text-lg mb-1">Comenzi Telefonice</h4>
                       <p className="text-gray-600">0712 345 678</p>
                     </div>
                   </CardContent>
@@ -104,7 +104,7 @@ export default function LivrariLaDomiciliu() {
             </div>
 
             {/* Order Form */}
-            <div>
+           {/* <div>
               <h3 className="text-2xl font-semibold mb-6 text-amber-800">Comandă Online</h3>
 
               <form className="space-y-4 bg-amber-50 p-6 rounded-lg">
@@ -151,7 +151,7 @@ export default function LivrariLaDomiciliu() {
                   <Button className="w-full bg-amber-700 hover:bg-amber-800">Trimite Comanda</Button>
                 </div>
               </form>
-            </div>
+            </div>*/}
           </div>
         </div>
       </section>

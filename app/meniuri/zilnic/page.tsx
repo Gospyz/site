@@ -18,9 +18,116 @@ type Product = {
   image: string
 }
 
+// Date hardcodate pentru meniul zilnic
+const initialProducts: Product[] = [
+  // Mic dejun
+  {
+    id: "1",
+    name: "Omletă cu jambon și cașcaval",
+    price: "16",
+    description: "Omletă din 3 ouă cu jambon afumat și cașcaval, servită cu roșii cherry",
+    category: "mic-dejun",
+    image: "/placeholder.svg?height=200&width=300&text=Omleta"
+  },
+  {
+    id: "2",
+    name: "Clătite cu dulceață",
+    price: "14",
+    description: "Clătite pufoase cu dulceață de căpșuni și frișcă",
+    category: "mic-dejun",
+    image: "/placeholder.svg?height=200&width=300&text=Clatite"
+  },
+  {
+    id: "3",
+    name: "Toast cu avocado",
+    price: "18",
+    description: "Pâine prăjită cu avocado, ou poșat și semințe de susan",
+    category: "mic-dejun",
+    image: "/placeholder.svg?height=200&width=300&text=Toast+Avocado"
+  },
+  
+  // Prânz
+  {
+    id: "4",
+    name: "Ciorbă de legume",
+    price: "12",
+    description: "Ciorbă de legume proaspete cu smântână și mărar",
+    category: "pranz",
+    image: "/placeholder.svg?height=200&width=300&text=Ciorba+Legume"
+  },
+  {
+    id: "5",
+    name: "Schnizel cu piure",
+    price: "24",
+    description: "Schnizel de pui pane cu piure de cartofi și salată de varză",
+    category: "pranz",
+    image: "/placeholder.svg?height=200&width=300&text=Schnizel"
+  },
+  {
+    id: "6",
+    name: "Paste cu sos bolognese",
+    price: "22",
+    description: "Paste italiene cu sos bolognese și parmezan proaspăt ras",
+    category: "pranz",
+    image: "/placeholder.svg?height=200&width=300&text=Bolognese"
+  },
+  
+  // Cină
+  {
+    id: "7",
+    name: "Somon la grătar",
+    price: "35",
+    description: "File de somon la grătar cu legume și sos de lămâie",
+    category: "cina",
+    image: "/placeholder.svg?height=200&width=300&text=Somon+Gratar"
+  },
+  {
+    id: "8",
+    name: "Mușchi de porc la tigaie",
+    price: "28",
+    description: "Mușchi de porc cu ciuperci și sos de smântână, garnitură la alegere",
+    category: "cina",
+    image: "/placeholder.svg?height=200&width=300&text=Muschi+Porc"
+  },
+  {
+    id: "9",
+    name: "Salată Caesar",
+    price: "20",
+    description: "Salată Caesar cu pui la grătar, parmezan și crutoane",
+    category: "cina",
+    image: "/placeholder.svg?height=200&width=300&text=Caesar"
+  },
+  
+  // Desert
+  {
+    id: "10",
+    name: "Tiramisu",
+    price: "16",
+    description: "Desert italian clasic cu mascarpone și cafea",
+    category: "desert",
+    image: "/placeholder.svg?height=200&width=300&text=Tiramisu"
+  },
+  {
+    id: "11",
+    name: "Papanași cu smântână",
+    price: "14",
+    description: "Papanași tradiționali cu smântână și dulceață de afine",
+    category: "desert",
+    image: "/placeholder.svg?height=200&width=300&text=Papanasi"
+  },
+  {
+    id: "12",
+    name: "Înghețată artizanală",
+    price: "12",
+    description: "3 bile de înghețată artizanală - vanilie, ciocolată și căpșuni",
+    category: "desert",
+    image: "/placeholder.svg?height=200&width=300&text=Inghetata"
+  }
+]
+
 export default function MeniuZilnic() {
   // State pentru produse
-  const [products, setProducts] = useState<Product[]>([])
+  const [products, setProducts] = useState<Product[]>(initialProducts)
   const [selectedCategory, setSelectedCategory] = useState("toate")
 
   // Încărcăm produsele din localStorage la încărcarea paginii
@@ -28,6 +135,9 @@ export default function MeniuZilnic() {
     const savedProducts = localStorage.getItem("meniuZilnicProducts")
     if (savedProducts) {
       setProducts(JSON.parse(savedProducts))
+    } else {
+      // Dacă nu există date salvate, folosim datele hardcodate
+      setProducts(initialProducts)
     }
   }, [])
 
@@ -52,7 +162,7 @@ export default function MeniuZilnic() {
       {/* Header */}
       <div className="relative h-[200px] w-full">
         <Image
-          src="/placeholder.svg?height=200&width=1200&text=Meniu+Zilnic"
+          src="/meniuz.jpg?height=200&width=1200&text=Meniu+Zilnic"
           alt="Meniu Zilnic"
           fill
           className="object-cover brightness-75"
@@ -71,17 +181,17 @@ export default function MeniuZilnic() {
             <Tabs defaultValue="toate" onValueChange={setSelectedCategory}>
               <TabsList className="mb-6 mx-auto">
                 <TabsTrigger value="toate">Toate</TabsTrigger>
-                <TabsTrigger value="ciorbe">Ciorbe și Supe</TabsTrigger>
-                <TabsTrigger value="felPrincipal">Fel Principal</TabsTrigger>
-                <TabsTrigger value="garnituri">Garnituri</TabsTrigger>
+                <TabsTrigger value="mic-dejun">Mic Dejun</TabsTrigger>
+                <TabsTrigger value="pranz">Prânz</TabsTrigger>
+                <TabsTrigger value="cina">Cină</TabsTrigger>
                 <TabsTrigger value="desert">Desert</TabsTrigger>
               </TabsList>
 
               <TabsContent value={selectedCategory} className="mt-0">
                 {filteredProducts.length > 0 ? (
-                  <div className="grid grid-cols-1 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {filteredProducts.map((product) => (
-                      <Card key={product.id}>
+                      <Card key={product.id} className="h-full">
                         <div className="relative aspect-video">
                           <Image
                             src={product.image || "/placeholder.svg?height=200&width=300&text=Preparat"}
@@ -90,25 +200,25 @@ export default function MeniuZilnic() {
                             className="object-cover"
                           />
                         </div>
-                        <CardContent className="p-4">
-                          <div className="flex justify-between items-start mb-2">
-                            <h3 className="text-lg font-semibold">{product.name}</h3>
-                            <p className="font-bold text-amber-700">{product.price} lei</p>
+                        <CardContent className="p-3">
+                          <div className="flex justify-between items-start mb-1">
+                            <h3 className="text-base font-semibold">{product.name}</h3>
+                            <p className="font-bold text-amber-700 text-sm">{product.price} lei</p>
                           </div>
-                          <p className="text-sm text-gray-500 capitalize mb-2">
-                            {product.category === "ciorbe"
-                              ? "Ciorbă/Supă"
-                              : product.category === "felPrincipal"
-                                ? "Fel Principal"
-                                : product.category === "garnituri"
-                                  ? "Garnitură"
+                          <p className="text-xs text-gray-500 capitalize mb-2">
+                            {product.category === "mic-dejun"
+                              ? "Mic Dejun"
+                              : product.category === "pranz"
+                                ? "Prânz"
+                                : product.category === "cina"
+                                  ? "Cină"
                                   : "Desert"}
                           </p>
-                          {product.description && <p className="text-sm text-gray-700 mb-4">{product.description}</p>}
+                          {product.description && <p className="text-xs text-gray-700 mb-3 line-clamp-2">{product.description}</p>}
                           <div className="flex gap-2 mt-2">
-                            <Button variant="outline" size="sm">
+                            {/*<Button variant="outline" size="sm">
                               Vezi detalii
-                            </Button>
+                            </Button>*/}
                           </div>
                         </CardContent>
                       </Card>

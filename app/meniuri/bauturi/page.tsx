@@ -23,9 +23,116 @@ type Product = {
   image: string
 }
 
+// Date hardcodate pentru băuturi
+const initialProducts: Product[] = [
+  // Vinuri
+  {
+    id: "1",
+    name: "Fetească Neagră",
+    price: "45",
+    description: "Vin roșu sec, corpulent cu arome de fructe negre și note condimentate",
+    category: "vinuri",
+    image: "/placeholder.svg?height=200&width=300&text=Feteasca+Neagra"
+  },
+  {
+    id: "2",
+    name: "Chardonnay",
+    price: "42",
+    description: "Vin alb sec, elegant cu arome florale și note de citrice",
+    category: "vinuri",
+    image: "/placeholder.svg?height=200&width=300&text=Chardonnay"
+  },
+  {
+    id: "3",
+    name: "Cabernet Sauvignon",
+    price: "52",
+    description: "Vin roșu de calitate superioară, cu tannini puternici și gust persistent",
+    category: "vinuri",
+    image: "/placeholder.svg?height=200&width=300&text=Cabernet"
+  },
+  
+  // Cocktailuri
+  {
+    id: "4",
+    name: "Mojito",
+    price: "28",
+    description: "Rom alb, lime, mentă proaspătă și apă minerală",
+    category: "cocktailuri",
+    image: "/placeholder.svg?height=200&width=300&text=Mojito"
+  },
+  {
+    id: "5",
+    name: "Cosmopolitan",
+    price: "32",
+    description: "Vodka, triplu sec, suc de afine și lime",
+    category: "cocktailuri",
+    image: "/placeholder.svg?height=200&width=300&text=Cosmopolitan"
+  },
+  {
+    id: "6",
+    name: "Old Fashioned",
+    price: "35",
+    description: "Whiskey bourbon, zahăr brun, bitters și coajă de portocală",
+    category: "cocktailuri",
+    image: "/placeholder.svg?height=200&width=300&text=Old+Fashioned"
+  },
+  
+  // Băuturi răcoritoare
+  {
+    id: "7",
+    name: "Limonadă Naturală",
+    price: "15",
+    description: "Lămâi proaspete, zahăr și apă minerală",
+    category: "racoritoare",
+    image: "/placeholder.svg?height=200&width=300&text=Limonada"
+  },
+  {
+    id: "8",
+    name: "Suc Natural de Portocale",
+    price: "18",
+    description: "100% suc natural de portocale proaspăt stors",
+    category: "racoritoare",
+    image: "/placeholder.svg?height=200&width=300&text=Suc+Portocale"
+  },
+  {
+    id: "9",
+    name: "Apă Minerală",
+    price: "8",
+    description: "Apă minerală naturală, plată sau carbogazoasă",
+    category: "racoritoare",
+    image: "/placeholder.svg?height=200&width=300&text=Apa+Minerala"
+  },
+  
+  // Cafea și ceai
+  {
+    id: "10",
+    name: "Espresso",
+    price: "12",
+    description: "Cafea italiană tradițională, aromată și intensă",
+    category: "cafea",
+    image: "/placeholder.svg?height=200&width=300&text=Espresso"
+  },
+  {
+    id: "11",
+    name: "Cappuccino",
+    price: "16",
+    description: "Espresso cu spumă de lapte și pudră de cacao",
+    category: "cafea",
+    image: "/placeholder.svg?height=200&width=300&text=Cappuccino"
+  },
+  {
+    id: "12",
+    name: "Ceai Verde",
+    price: "14",
+    description: "Ceai verde premium cu proprietăți antioxidante",
+    category: "cafea",
+    image: "/placeholder.svg?height=200&width=300&text=Ceai+Verde"
+  }
+]
+
 export default function MeniuBauturi() {
   // State pentru produse
-  const [products, setProducts] = useState<Product[]>([])
+  const [products, setProducts] = useState<Product[]>(initialProducts)
   const [selectedCategory, setSelectedCategory] = useState("toate")
   const [editingProduct, setEditingProduct] = useState<Product | null>(null)
   const [isEditing, setIsEditing] = useState(false)
@@ -44,6 +151,9 @@ export default function MeniuBauturi() {
     const savedProducts = localStorage.getItem("meniuBauturiProducts")
     if (savedProducts) {
       setProducts(JSON.parse(savedProducts))
+    } else {
+      // Dacă nu există date salvate, folosim datele hardcodate
+      setProducts(initialProducts)
     }
   }, [])
 
@@ -115,7 +225,7 @@ export default function MeniuBauturi() {
       {/* Header */}
       <div className="relative h-[200px] w-full">
         <Image
-          src="/placeholder.svg?height=200&width=1200&text=Bauturi"
+          src="/bauturi.png?height=20&width=1200&text=Bauturi"
           alt="Băuturi"
           fill
           className="object-cover brightness-75"
@@ -128,7 +238,7 @@ export default function MeniuBauturi() {
       {/* Main Content */}
       <section className="py-12">
         <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1gap-8">
+          <div className="grid grid-cols-1 gap-8">
             {/* Formular adăugare/editare
             <div className="lg:col-span-1">
               <div className="bg-white p-6 rounded-lg shadow-md">
@@ -258,9 +368,9 @@ export default function MeniuBauturi() {
 
               <TabsContent value={selectedCategory} className="mt-0">
                 {filteredProducts.length > 0 ? (
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                     {filteredProducts.map((product) => (
-                      <Card key={product.id}>
+                      <Card key={product.id} className="h-full">
                         <div className="relative aspect-video">
                           <Image
                             src={product.image || "/placeholder.svg?height=200&width=300&text=Bautura"}
@@ -269,12 +379,12 @@ export default function MeniuBauturi() {
                             className="object-cover"
                           />
                         </div>
-                        <CardContent className="p-4">
-                          <div className="flex justify-between items-start mb-2">
-                            <h3 className="text-lg font-semibold">{product.name}</h3>
-                            <p className="font-bold text-amber-700">{product.price} lei</p>
+                        <CardContent className="p-3">
+                          <div className="flex justify-between items-start mb-1">
+                            <h3 className="text-base font-semibold">{product.name}</h3>
+                            <p className="font-bold text-amber-700 text-sm">{product.price} lei</p>
                           </div>
-                          <p className="text-sm text-gray-500 capitalize mb-2">
+                          <p className="text-xs text-gray-500 capitalize mb-2">
                             {product.category === "vinuri"
                               ? "Vin"
                               : product.category === "cocktailuri"
@@ -283,13 +393,13 @@ export default function MeniuBauturi() {
                                   ? "Băutură Răcoritoare"
                                   : "Cafea/Ceai"}
                           </p>
-                          {product.description && <p className="text-sm text-gray-700 mb-4">{product.description}</p>}
+                          {product.description && <p className="text-xs text-gray-700 mb-3 line-clamp-2">{product.description}</p>}
                           <div className="flex gap-2 mt-2">
-                            <Button variant="outline" size="sm" onClick={() => handleEditProduct(product)}>
+                           {/*} <Button variant="outline" size="sm" onClick={() => handleEditProduct(product)}>
                               <Edit className="mr-1 h-4 w-4" />
                               Editează
-                            </Button>
-                            <Button
+                            </Button>*/}
+                            {/*<Button
                               variant="outline"
                               size="sm"
                               className="text-red-500 hover:bg-red-50 hover:text-red-600"
@@ -297,7 +407,7 @@ export default function MeniuBauturi() {
                             >
                               <Trash2 className="mr-1 h-4 w-4" />
                               Șterge
-                            </Button>
+                            </Button>*/}
                           </div>
                         </CardContent>
                       </Card>

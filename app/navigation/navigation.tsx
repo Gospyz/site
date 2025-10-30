@@ -13,7 +13,7 @@ export default function Navigation() {
                 onMouseLeave={() => setMenuOpen(false)}>
                 <div className="flex-shrink-0">
                     <Link href="/">
-                        <Image src="/logo.png" alt="Restaurant Logo" width={180} height={60} className="h-auto" />
+                        <Image src="/logob.png" alt="Restaurant Logo" width={280} height={120} className="h-auto w-39" />
                     </Link>
                 </div>
 
@@ -29,7 +29,7 @@ export default function Navigation() {
                             Meniuri <ChevronDown className="ml-1 h-4 w-4" />
                         </button>
                         <div
-                            className={`absolute left-0 mt-2 w-48 bg-black shadow-lg rounded-md ${menuOpen ? "block" : "hidden group-hover:block"} z-10`}
+                            className={`absolute left-0 mt-2 w-56 bg-black shadow-lg rounded-md ${menuOpen ? "block" : "hidden group-hover:block"} z-10`}
                         >
                             <Link
                                 href="/meniuri/zilnic"

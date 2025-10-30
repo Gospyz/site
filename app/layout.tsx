@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   title: "Restaurant - Experiență Culinară Autentică",
   description:
     "Restaurant tradițional cu preparate autentice, organizare de evenimente și servicii de livrare la domiciliu.",
-    generator: 'v0.app'
 }
 
 export default function RootLayout({

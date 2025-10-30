@@ -53,12 +53,12 @@ export default function Home() {
               <p className="text-gray-700">
                 Bucurați-vă de preparate tradiționale și internaționale într-un ambient elegant și primitor.
               </p>
-              <Link
+              {/*<Link
                 href="/restaurant"
                 className="inline-block mt-4 px-4 py-2 bg-amber-700 text-white rounded hover:bg-amber-800 transition"
               >
                 Află mai multe
-              </Link>
+              </Link>*/}
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -66,12 +66,12 @@ export default function Home() {
               <p className="text-gray-700">
                 Organizăm evenimente speciale, nunți, botezuri, aniversări și petreceri corporate.
               </p>
-              <Link
+             {/*} <Link
                 href="/evenimente"
                 className="inline-block mt-4 px-4 py-2 bg-amber-700 text-white rounded hover:bg-amber-800 transition"
               >
                 Află mai multe
-              </Link>
+              </Link> */}
             </div>
 
             <div className="bg-white p-6 rounded-lg shadow-md text-center">
@@ -79,12 +79,12 @@ export default function Home() {
               <p className="text-gray-700">
                 Comandă preparatele tale preferate direct la tine acasă, rapid și în condiții optime.
               </p>
-              <Link
+              {/*<Link
                 href="/livrari-la-domiciliu"
                 className="inline-block mt-4 px-4 py-2 bg-amber-700 text-white rounded hover:bg-amber-800 transition"
               >
                 Află mai multe
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h4 className="text-xl font-semibold mb-4 text-amber-400">Contact</h4>
-              <p className="mb-2">Adresă: Strada Exemplu, Nr. 123</p>
+              <p className="mb-2">Adresă: Strada Barajul Uzului CA9</p>
               <p className="mb-2">Telefon: 0712 345 678</p>
               <p className="mb-2">Email: contact@restaurant.ro</p>
             </div>
@@ -104,8 +104,8 @@ export default function Home() {
             <div>
               <h4 className="text-xl font-semibold mb-4 text-amber-400">Program</h4>
               <p className="mb-2">Luni - Vineri: 10:00 - 22:00</p>
-              <p className="mb-2">Sâmbătă: 10:00 - 23:00</p>
-              <p className="mb-2">Duminică: 12:00 - 22:00</p>
+              <p className="mb-2">Sâmbătă: 10:00 - 22:00</p>
+              <p className="mb-2">Duminică: 10:00 - 22:00</p>
             </div>
 
             <div>

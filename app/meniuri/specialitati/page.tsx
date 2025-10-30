@@ -23,9 +23,116 @@ type Product = {
   image: string
 }
 
+// Date hardcodate pentru specialități
+const initialProducts: Product[] = [
+  // Preparate Tradiționale
+  {
+    id: "1",
+    name: "Sarmale în foi de varză",
+    price: "28",
+    description: "Sarmale tradiționale cu carne de porc și vită, servite cu smântână și mămăligă",
+    category: "traditionale",
+    image: "/placeholder.svg?height=200&width=300&text=Sarmale"
+  },
+  {
+    id: "2",
+    name: "Mici cu muștar",
+    price: "22",
+    description: "Mici din carne de vită și porc, grătare pe jar, serviți cu muștar și pâine",
+    category: "traditionale",
+    image: "/placeholder.svg?height=200&width=300&text=Mici"
+  },
+  {
+    id: "3",
+    name: "Ciorbă de burtă",
+    price: "18",
+    description: "Ciorbă tradițională de burtă cu smântână, usturoi și oțet",
+    category: "traditionale",
+    image: "/placeholder.svg?height=200&width=300&text=Ciorba+Burta"
+  },
+  
+  // Specialitățile Chef-ului
+  {
+    id: "4",
+    name: "File de somon glazurat",
+    price: "48",
+    description: "File de somon proaspăt cu glazură de miere și ierburi aromate, garnitură de legume",
+    category: "chef",
+    image: "/placeholder.svg?height=200&width=300&text=Somon"
+  },
+  {
+    id: "5",
+    name: "Mușchi de vită Wellington",
+    price: "65",
+    description: "Mușchi de vită în foietaj cu ciuperci și pate de ficat, sos de vin roșu",
+    category: "chef",
+    image: "/placeholder.svg?height=200&width=300&text=Wellington"
+  },
+  {
+    id: "6",
+    name: "Rack de miel cu ierburi",
+    price: "55",
+    description: "Coastă de miel marinată în ierburi mediteraneene, garnitură de cartofi gratinați",
+    category: "chef",
+    image: "/placeholder.svg?height=200&width=300&text=Miel"
+  },
+  
+  // Preparate Internaționale
+  {
+    id: "7",
+    name: "Risotto cu ciuperci porcini",
+    price: "32",
+    description: "Risotto cremos cu ciuperci porcini, parmezan și trufe",
+    category: "internationale",
+    image: "/placeholder.svg?height=200&width=300&text=Risotto"
+  },
+  {
+    id: "8",
+    name: "Pasta Carbonara",
+    price: "26",
+    description: "Spaghetti cu bacon, ou, parmezan și piper negru proaspăt măcinat",
+    category: "internationale",
+    image: "/placeholder.svg?height=200&width=300&text=Carbonara"
+  },
+  {
+    id: "9",
+    name: "Paella Valenciana",
+    price: "38",
+    description: "Paella tradițională cu pui, fructe de mare, legume și șofran",
+    category: "internationale",
+    image: "/placeholder.svg?height=200&width=300&text=Paella"
+  },
+  
+  // Preparate de Sezon
+  {
+    id: "10",
+    name: "Ciorbă de ciuperci de pădure",
+    price: "16",
+    description: "Ciorbă de sezon cu ciuperci proaspete de pădure și smântână",
+    category: "sezon",
+    image: "/placeholder.svg?height=200&width=300&text=Ciorba+Ciuperci"
+  },
+  {
+    id: "11",
+    name: "Salată de dovleac copt",
+    price: "20",
+    description: "Dovleac copt cu brânză de capră, nuci și dressing de miere",
+    category: "sezon",
+    image: "/placeholder.svg?height=200&width=300&text=Salata+Dovleac"
+  },
+  {
+    id: "12",
+    name: "Supă cremă de castane",
+    price: "14",
+    description: "Supă cremă de castane cu aromă de rozmarin și crutoane",
+    category: "sezon",
+    image: "/placeholder.svg?height=200&width=300&text=Supa+Castane"
+  }
+]
+
 export default function MeniuSpecialitati() {
   // State pentru produse
-  const [products, setProducts] = useState<Product[]>([])
+  const [products, setProducts] = useState<Product[]>(initialProducts)
   const [selectedCategory, setSelectedCategory] = useState("toate")
   const [editingProduct, setEditingProduct] = useState<Product | null>(null)
   const [isEditing, setIsEditing] = useState(false)
@@ -44,6 +151,9 @@ export default function MeniuSpecialitati() {
     const savedProducts = localStorage.getItem("meniuSpecialitatiProducts")
     if (savedProducts) {
       setProducts(JSON.parse(savedProducts))
+    } else {
+      // Dacă nu există date salvate, folosim datele hardcodate
+      setProducts(initialProducts)
     }
   }, [])
 
@@ -113,8 +223,7 @@ export default function MeniuSpecialitati() {
 
       {/* Header */}
       <div className="relative h-[200px] w-full">
-        <Image
-          src="/placeholder.svg?height=200&width=1200&text=Specialitati"
+        <Image src="/traditionalr.jpg?height=200&width=1200&text=Specialitati"
           alt="Specialitățile Casei"
           fill
           className="object-cover brightness-75"
@@ -258,9 +367,9 @@ export default function MeniuSpecialitati() {
 
                 <TabsContent value={selectedCategory} className="mt-0">
                   {filteredProducts.length > 0 ? (
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                       {filteredProducts.map((product) => (
-                        <Card key={product.id}>
+                        <Card key={product.id} className="h-full">
                           <div className="relative aspect-video">
                             <Image
                               src={product.image || "/placeholder.svg?height=200&width=300&text=Preparat"}
@@ -269,12 +378,12 @@ export default function MeniuSpecialitati() {
                               className="object-cover"
                             />
                           </div>
-                          <CardContent className="p-4">
-                            <div className="flex justify-between items-start mb-2">
-                              <h3 className="text-lg font-semibold">{product.name}</h3>
-                              <p className="font-bold text-amber-700">{product.price} lei</p>
+                          <CardContent className="p-3">
+                            <div className="flex justify-between items-start mb-1">
+                              <h3 className="text-base font-semibold">{product.name}</h3>
+                              <p className="font-bold text-amber-700 text-sm">{product.price} lei</p>
                             </div>
-                            <p className="text-sm text-gray-500 capitalize mb-2">
+                            <p className="text-xs text-gray-500 capitalize mb-2">
                               {product.category === "traditionale"
                                 ? "Preparat Tradițional"
                                 : product.category === "chef"
@@ -283,9 +392,9 @@ export default function MeniuSpecialitati() {
                                     ? "Preparat Internațional"
                                     : "Preparat de Sezon"}
                             </p>
-                            {product.description && <p className="text-sm text-gray-700 mb-4">{product.description}</p>}
+                            {product.description && <p className="text-xs text-gray-700 mb-3 line-clamp-2">{product.description}</p>}
                             <div className="flex gap-2 mt-2">
-                              <Button variant="outline" size="sm" onClick={() => handleEditProduct(product)}>
+                              {/*<Button variant="outline" size="sm" onClick={() => handleEditProduct(product)}>
                                 <Edit className="mr-1 h-4 w-4" />
                                 Editează
                               </Button>
@@ -297,7 +406,7 @@ export default function MeniuSpecialitati() {
                               >
                                 <Trash2 className="mr-1 h-4 w-4" />
                                 Șterge
-                              </Button>
+                              </Button>*/}
                             </div>
                           </CardContent>
                         </Card>

@@ -3,8 +3,65 @@
 import Image from "next/image"
 import Link from "next/link"
 import Navigation from "./navigation/navigation"
+import { useState, useEffect } from "react"
+import { ChevronLeft, ChevronRight } from "lucide-react"
+
+// Imagini pentru carusel
+const heroImages = [
+  {
+    id: 1,
+    src: "/home1.jpg",
+    alt: "Restaurant Ambiance",
+    title: "Experiență Culinară Autentică",
+    subtitle: "Descoperă gusturile tradiționale într-un cadru modern"
+  },
+  {
+    id: 2,
+    src: "/home2.jpg",
+    alt: "Terasa Restaurant",
+    title: "Terasa cu Vedere Splendidă",
+    subtitle: "Bucură-te de preparatele noastre în aer liber"
+  },
+  {
+    id: 3,
+    src: "/foto.jpg",
+    alt: "Preparate Speciale",
+    title: "Preparate Tradiționale",
+    subtitle: "Rețete transmise din generație în generație"
+  },
+  {
+    id: 4,
+    src: "/bauturi.png",
+    alt: "Băuturi Selecte",
+    title: "Băuturi Fine și Cocktailuri",
+    subtitle: "O selecție rafinată pentru fiecare gust"
+  }
+]
 
 export default function Home() {
+  const [currentSlide, setCurrentSlide] = useState(0)
+
+  // Auto-play functionality
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % heroImages.length)
+    }, 5000) // Schimbă imaginea la fiecare 5 secunde
+
+    return () => clearInterval(timer)
+  }, [])
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heroImages.length)
+  }
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heroImages.length) % heroImages.length)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
+  }
+
   return (
     <main className="flex min-h-screen flex-col">
       {/* Top gold banner */}
@@ -14,9 +71,76 @@ export default function Home() {
       <Navigation />
 
 
-      {/* Hero Section */}
-      <div className="relative h-[500px] w-full">
-        <Image src="/hero.jpg" alt="Restaurant Ambiance" fill priority className="object-cover" />
+      {/* Hero Carousel Section */}
+      <div className="relative h-[500px] w-full overflow-hidden bg-gray-200">
+        {/* Images */}
+        <div className="relative h-full w-full">
+          {heroImages.map((image, index) => (
+            <div
+              key={image.id}
+              className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
+                index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+              }`}
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                priority={index === 0}
+                className="object-cover w-full h-full"
+                sizes="100vw"
+                onError={(e) => {
+                  console.log(`Failed to load image: ${image.src}`)
+                }}
+                onLoad={() => {
+                  console.log(`Loaded image: ${image.src}`)
+                }}
+              />
+              
+              {/* Text overlay cu background doar pe text */}
+              <div className="absolute inset-0 flex items-center justify-center text-center text-white z-30">
+                <div className="max-w-3xl px-6 py-8 bg-black bg-opacity-50 rounded-lg backdrop-blur-sm">
+                  <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+                    {image.title}
+                  </h1>
+                  <p className="text-lg md:text-xl drop-shadow-lg">
+                    {image.subtitle}
+                  </p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Navigation Arrows */}
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-amber-600 hover:bg-amber-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 z-40 border-2 border-white"
+        >
+          <ChevronLeft className="h-6 w-6 stroke-2" />
+        </button>
+        
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-amber-600 hover:bg-amber-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 z-40 border-2 border-white"
+        >
+          <ChevronRight className="h-6 w-6 stroke-2" />
+        </button>
+
+        {/* Dots Indicator */}
+        <div className="absolute bottom-6 left-1/2 transform -translate-x-1/2 flex space-x-2 z-40">
+          {heroImages.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                index === currentSlide 
+                  ? 'bg-amber-400 scale-125' 
+                  : 'bg-white bg-opacity-50 hover:bg-opacity-75'
+              }`}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Main Content */}

@@ -20,10 +20,10 @@ export default function LivrariLaDomiciliu() {
       {/* Hero Section */}
       <div className="relative h-[300px] w-full">
         <Image
-          src="/placeholder.svg?height=300&width=1200&text=Livrari+La+Domiciliu"
+          src="/comenzi.jpg?height=300&width=1200&text=Livrari+La+Domiciliu"
           alt="Livrari La Domiciliu"
           fill
-          className="object-cover brightness-75"
+          className="object-content brightness-75"
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <h1 className="text-4xl md:text-5xl font-bold text-white drop-shadow-lg">Livrări la Domiciliu</h1>

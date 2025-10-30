@@ -3,8 +3,10 @@
 import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog"
 import Navigation from "../navigation/navigation"
 import { useState } from "react"
+import { X } from "lucide-react"
 
 // Datele pentru galeria foto
 const galleryImages = [
@@ -22,9 +24,9 @@ const galleryImages = [
   },
   {
     id: 3,
-    src: "/placeholder.svg?height=400&width=600",
+    src: "/terasa.jpg?height=400&width=600",
     alt: "Evenimente speciale",
-    category: "evenimente",
+    category: "locatie",
   },
   {
     id: 4,
@@ -42,7 +44,7 @@ const galleryImages = [
     id: 6,
     src: "/placeholder.svg?height=400&width=600",
     alt: "Evenimente speciale",
-    category: "evenimente",
+    category: "locatie",
   },
   {
     id: 7,
@@ -60,12 +62,24 @@ const galleryImages = [
     id: 9,
     src: "/placeholder.svg?height=400&width=600",
     alt: "Evenimente speciale",
-    category: "evenimente",
+    category: "locatie",
   },
 ]
 
 export default function GalerieFoto() {
   const [filteredImages, setFilteredImages] = useState(galleryImages);
+  const [selectedImage, setSelectedImage] = useState<typeof galleryImages[0] | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openImageModal = (image: typeof galleryImages[0]) => {
+    setSelectedImage(image);
+    setIsModalOpen(true);
+  };
+
+  const closeImageModal = () => {
+    setIsModalOpen(false);
+    setSelectedImage(null);
+  };
   return (
     <main className="flex min-h-screen flex-col">
       {/* Top gold banner */}
@@ -78,7 +92,7 @@ export default function GalerieFoto() {
       {/* Gallery Header */}
       <div className="relative h-[300px] w-full">
         <Image
-          src="/placeholder.svg?height=300&width=1200&text=Galerie+Foto"
+          src="/foto.jpg?height=300&width=1200&text=Galerie+Foto"
           alt="Galerie Foto Header"
           fill
           className="object-cover brightness-75"
@@ -108,9 +122,9 @@ export default function GalerieFoto() {
               Preparate
             </Button>
             <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100"
-            onClick={() => {setFilteredImages(galleryImages.filter(image => image.category === "evenimente"))
+            onClick={() => {setFilteredImages(galleryImages.filter(image => image.category === "locatie"))
             }}>
-              Evenimente
+              Locatie
             </Button>
           </div>
         </div>
@@ -129,13 +143,59 @@ export default function GalerieFoto() {
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <Button className="bg-amber-700 hover:bg-amber-800">Vezi imaginea</Button>
+                  <Button 
+                    className="bg-amber-700 hover:bg-amber-800"
+                    onClick={() => openImageModal(image)}
+                  >
+                    Vezi imaginea
+                  </Button>
                 </div>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Image Modal */}
+      {isModalOpen && selectedImage && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
+          <div className="relative max-w-7xl max-h-screen m-4">
+            {/* Close Button */}
+            <button
+              onClick={closeImageModal}
+              className="absolute top-4 right-4 z-10 bg-white hover:bg-gray-100 text-black rounded-full p-2 transition-colors"
+            >
+              <X className="h-6 w-6" />
+            </button>
+            
+            {/* Large Image */}
+            <div className="relative max-h-[90vh] max-w-[90vw]">
+              <Image
+                src={selectedImage.src || "/placeholder.svg"}
+                alt={selectedImage.alt}
+                width={800}
+                height={600}
+                className="object-contain max-h-[90vh] max-w-[90vw] rounded-lg"
+              />
+            </div>
+            
+            {/* Image Info */}
+            <div className="absolute bottom-4 left-4 bg-black bg-opacity-75 text-white p-3 rounded-lg">
+              <p className="text-lg font-semibold">{selectedImage.alt}</p>
+              <p className="text-sm text-gray-300 capitalize">
+                Categorie: {selectedImage.category === "interior" ? "Interior" : 
+                          selectedImage.category === "preparate" ? "Preparate" : "Locație"}
+              </p>
+            </div>
+          </div>
+          
+          {/* Click outside to close */}
+          <div 
+            className="absolute inset-0 -z-10" 
+            onClick={closeImageModal}
+          ></div>
+        </div>
+      )}
 
       {/* Upload Section */}
       {/*<section className="py-12 bg-amber-50">

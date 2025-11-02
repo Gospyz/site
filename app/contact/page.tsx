@@ -23,10 +23,10 @@ export default function Contact() {
               <h2 className="text-2xl font-semibold mb-4 text-amber-800">Informații de Contact</h2>
 
               <div className="space-y-4 text-gray-700">
-                <p className="flex items-center">
+                <p className="flex items-center justify-center sm:justify-start">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 mr-2 text-amber-600"
+                    className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-amber-600 flex-shrink-0"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -44,13 +44,13 @@ export default function Contact() {
                       d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                     />
                   </svg>
-                  <span>Strada Barajul Uzului CA 9, București</span>
+                  <span className="text-sm sm:text-base">Strada Barajul Uzului CA 9, București</span>
                 </p>
 
                 <p className="flex items-center justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 mr-2 text-amber-600"
+                    className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-amber-600 flex-shrink-0"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -62,13 +62,13 @@ export default function Contact() {
                       d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
                     />
                   </svg>
-                  <span>0770 285 661</span>
+                  <span className="text-sm sm:text-base">0770 285 661</span>
                 </p>
 
                 <p className="flex items-center justify-center">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 mr-2 text-amber-600"
+                    className="h-5 w-5 sm:h-6 sm:w-6 mr-2 text-amber-600 flex-shrink-0"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -80,7 +80,7 @@ export default function Contact() {
                       d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 002 2z"
                     />
                   </svg>
-                  <span>contact@restaurant.ro</span>
+                  <span className="text-sm sm:text-base">contact@restaurant.ro</span>
                 </p>
 
                 <div className="mt-6 text-center">
@@ -90,7 +90,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="w-full h-64 relative rounded-lg overflow-hidden group cursor-pointer">
+            <div className="w-full h-48 sm:h-64 md:h-80 relative rounded-lg overflow-hidden group cursor-pointer mt-6">
               <a 
                 href="https://www.google.com/maps/place/Restaurant+Minish/@44.4287258,26.1663356,17z/data=!4m6!3m5!1s0x40b1feb3efad4e9d:0x5256b8452252b05b!8m2!3d44.4290438!4d26.1680324!16s%2Fg%2F1tc_phx2?entry=ttu&g_ep=EgoyMDI1MTAyOS4yIKXMDSoASAFQAw%3D%3D" 
                 target="_blank" 
@@ -101,8 +101,8 @@ export default function Contact() {
                 
                 {/* Butonul centrat care apare la hover */}
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="bg-amber-600 hover:bg-amber-700 text-white px-6 py-3 rounded-lg shadow-lg flex items-center text-base font-medium">
-                    <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 sm:px-6 sm:py-3 rounded-lg shadow-lg flex items-center text-sm sm:text-base font-medium">
+                    <svg className="w-4 h-4 sm:w-5 sm:h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                     Vezi pe Google Maps

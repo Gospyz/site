@@ -646,17 +646,17 @@ export default function MeniuSpecialitati() {
             {/* Lista de produse */}
             <div>
               <Tabs defaultValue="toate" onValueChange={setSelectedCategory}>
-                <TabsList className="mb-6 mx-auto">
-                  <TabsTrigger value="toate">Toate</TabsTrigger>
-                  <TabsTrigger value="mic-dejun">Mic Dejun</TabsTrigger>
-                  <TabsTrigger value="ciorbe">Ciorbe</TabsTrigger>
-                  <TabsTrigger value="gratar">Grătar</TabsTrigger>
-                  <TabsTrigger value="platouri">Platouri</TabsTrigger>
-                  <TabsTrigger value="meniuri-speciale">Meniuri Speciale</TabsTrigger>
-                  <TabsTrigger value="sosuri-diverse">Sosuri/Diverse</TabsTrigger>
-                  <TabsTrigger value="salate">Salate</TabsTrigger>
-                  <TabsTrigger value="garnituri">Garnituri</TabsTrigger>
-                  <TabsTrigger value="desert">Desert</TabsTrigger>
+                <TabsList className="mb-6 mx-auto flex-wrap h-auto gap-1 p-2">
+                  <TabsTrigger value="toate" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Toate</TabsTrigger>
+                  <TabsTrigger value="mic-dejun" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Mic Dejun</TabsTrigger>
+                  <TabsTrigger value="ciorbe" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Ciorbe</TabsTrigger>
+                  <TabsTrigger value="gratar" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Grătar</TabsTrigger>
+                  <TabsTrigger value="platouri" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Platouri</TabsTrigger>
+                  <TabsTrigger value="meniuri-speciale" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Meniuri Speciale</TabsTrigger>
+                  <TabsTrigger value="sosuri-diverse" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Sosuri/Diverse</TabsTrigger>
+                  <TabsTrigger value="salate" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Salate</TabsTrigger>
+                  <TabsTrigger value="garnituri" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Garnituri</TabsTrigger>
+                  <TabsTrigger value="desert" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Desert</TabsTrigger>
                 </TabsList>
 
                 <TabsContent value={selectedCategory} className="mt-0">

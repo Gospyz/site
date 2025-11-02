@@ -723,17 +723,17 @@ export default function MeniuBauturi() {
 
             {/* Lista de produse */}
             <Tabs defaultValue="toate" onValueChange={setSelectedCategory}>
-              <TabsList className="mb-6 mx-auto">
-                <TabsTrigger value="toate">Toate</TabsTrigger>
-                <TabsTrigger value="racoritoare">Răcoritoare</TabsTrigger>
-                <TabsTrigger value="cafea">Cafea</TabsTrigger>
-                <TabsTrigger value="vodka">Vodka</TabsTrigger>
-                <TabsTrigger value="whisky">Whisky</TabsTrigger>
-                <TabsTrigger value="cocktail">Cocktail</TabsTrigger>
-                <TabsTrigger value="coniac">Coniac</TabsTrigger>
-                <TabsTrigger value="diverse">Diverse</TabsTrigger>
-                <TabsTrigger value="vinuri">Vinuri</TabsTrigger>
-                <TabsTrigger value="bere">Bere</TabsTrigger>
+              <TabsList className="mb-6 mx-auto flex-wrap h-auto gap-1 p-2">
+                <TabsTrigger value="toate" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Toate</TabsTrigger>
+                <TabsTrigger value="racoritoare" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Răcoritoare</TabsTrigger>
+                <TabsTrigger value="cafea" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Cafea</TabsTrigger>
+                <TabsTrigger value="vodka" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Vodka</TabsTrigger>
+                <TabsTrigger value="whisky" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Whisky</TabsTrigger>
+                <TabsTrigger value="cocktail" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Cocktail</TabsTrigger>
+                <TabsTrigger value="coniac" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Coniac</TabsTrigger>
+                <TabsTrigger value="diverse" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Diverse</TabsTrigger>
+                <TabsTrigger value="vinuri" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Vinuri</TabsTrigger>
+                <TabsTrigger value="bere" className="text-xs sm:text-sm px-2 py-1 sm:px-3 sm:py-2">Bere</TabsTrigger>
               </TabsList>
 
               <TabsContent value={selectedCategory} className="mt-0">

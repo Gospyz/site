@@ -105,23 +105,23 @@ export default function GalerieFoto() {
       {/* Gallery Filters */}
       <section className="py-8 bg-amber-50">
         <div className="container mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-4">
-            <Button variant="outline" className="bg-amber-700 text-white hover:bg-amber-800"
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+            <Button variant="outline" className="bg-amber-700 text-white hover:bg-amber-800 text-xs sm:text-sm px-3 py-2"
             onClick={() => {setFilteredImages(galleryImages)
             }}>
               Toate
             </Button>
-            <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100"
+            <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100 text-xs sm:text-sm px-3 py-2"
             onClick={() => {setFilteredImages(galleryImages.filter(image => image.category === "interior"))
             }}>
               Interior
             </Button>
-            <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100"
+            <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100 text-xs sm:text-sm px-3 py-2"
             onClick={() => {setFilteredImages(galleryImages.filter(image => image.category === "preparate"))
               }}>
               Preparate
             </Button>
-            <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100"
+            <Button variant="outline" className="border-amber-700 text-amber-700 hover:bg-amber-100 text-xs sm:text-sm px-3 py-2"
             onClick={() => {setFilteredImages(galleryImages.filter(image => image.category === "locatie"))
             }}>
               Locatie
@@ -158,31 +158,31 @@ export default function GalerieFoto() {
 
       {/* Image Modal */}
       {isModalOpen && selectedImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90">
-          <div className="relative max-w-7xl max-h-screen m-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-90 p-2 sm:p-4">
+          <div className="relative max-w-7xl max-h-screen w-full">
             {/* Close Button */}
             <button
               onClick={closeImageModal}
-              className="absolute top-4 right-4 z-10 bg-white hover:bg-gray-100 text-black rounded-full p-2 transition-colors"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 bg-white hover:bg-gray-100 text-black rounded-full p-2 transition-colors"
             >
-              <X className="h-6 w-6" />
+              <X className="h-5 w-5 sm:h-6 sm:w-6" />
             </button>
             
             {/* Large Image */}
-            <div className="relative max-h-[90vh] max-w-[90vw]">
+            <div className="relative max-h-[85vh] sm:max-h-[90vh] max-w-full">
               <Image
                 src={selectedImage.src || "/placeholder.svg"}
                 alt={selectedImage.alt}
                 width={800}
                 height={600}
-                className="object-contain max-h-[90vh] max-w-[90vw] rounded-lg"
+                className="object-contain max-h-[85vh] sm:max-h-[90vh] max-w-full rounded-lg"
               />
             </div>
             
             {/* Image Info */}
-            <div className="absolute bottom-4 left-4 bg-black bg-opacity-75 text-white p-3 rounded-lg">
-              <p className="text-lg font-semibold">{selectedImage.alt}</p>
-              <p className="text-sm text-gray-300 capitalize">
+            <div className="absolute bottom-2 left-2 sm:bottom-4 sm:left-4 bg-black bg-opacity-75 text-white p-2 sm:p-3 rounded-lg max-w-[calc(100%-4rem)]">
+              <p className="text-sm sm:text-lg font-semibold">{selectedImage.alt}</p>
+              <p className="text-xs sm:text-sm text-gray-300 capitalize">
                 Categorie: {selectedImage.category === "interior" ? "Interior" : 
                           selectedImage.category === "preparate" ? "Preparate" : "Locație"}
               </p>

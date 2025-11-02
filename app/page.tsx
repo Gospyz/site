@@ -98,12 +98,12 @@ export default function Home() {
               />
               
               {/* Text overlay cu background doar pe text */}
-              <div className="absolute inset-0 flex items-center justify-center text-center text-white z-30">
-                <div className="max-w-3xl px-6 py-8 bg-black bg-opacity-50 rounded-lg backdrop-blur-sm">
-                  <h1 className="text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
+              <div className="absolute inset-0 flex items-center justify-center text-center text-white z-30 px-4">
+                <div className="max-w-3xl px-4 py-6 sm:px-6 sm:py-8 bg-black bg-opacity-50 rounded-lg backdrop-blur-sm">
+                  <h1 className="text-2xl sm:text-4xl md:text-6xl font-bold mb-4 drop-shadow-lg">
                     {image.title}
                   </h1>
-                  <p className="text-lg md:text-xl drop-shadow-lg">
+                  <p className="text-sm sm:text-lg md:text-xl drop-shadow-lg">
                     {image.subtitle}
                   </p>
                 </div>
@@ -115,16 +115,16 @@ export default function Home() {
         {/* Navigation Arrows */}
         <button
           onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-amber-600 hover:bg-amber-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 z-40 border-2 border-white"
+          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-amber-600 hover:bg-amber-700 text-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-200 z-40 border-2 border-white"
         >
-          <ChevronLeft className="h-6 w-6 stroke-2" />
+          <ChevronLeft className="h-4 w-4 sm:h-6 sm:w-6 stroke-2" />
         </button>
         
         <button
           onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-amber-600 hover:bg-amber-700 text-white p-3 rounded-full shadow-lg transition-all duration-200 z-40 border-2 border-white"
+          className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-amber-600 hover:bg-amber-700 text-white p-2 sm:p-3 rounded-full shadow-lg transition-all duration-200 z-40 border-2 border-white"
         >
-          <ChevronRight className="h-6 w-6 stroke-2" />
+          <ChevronRight className="h-4 w-4 sm:h-6 sm:w-6 stroke-2" />
         </button>
 
         {/* Dots Indicator */}

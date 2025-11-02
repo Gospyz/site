@@ -46,52 +46,52 @@ export default function LivrariLaDomiciliu() {
             <div className="mx-auto  ">
               <h3 className="text-2xl font-semibold mb-6 text-amber-800">Informații Livrare</h3>
 
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Card>
-                  <CardContent className="flex items-start gap-4 p-6">
-                    <div className="bg-amber-100 p-3 rounded-full">
+                  <CardContent className="flex items-start gap-4 p-4 md:p-6">
+                    <div className="bg-amber-100 p-3 rounded-full flex-shrink-0">
                       <MapPin className="h-6 w-6 text-amber-700" />
                     </div>
                     <div>
                       <h4 className="font-medium text-lg mb-1">Zone de Livrare</h4>
-                      <p className="text-gray-600">Sectoarele 2, 3 și 4 din București</p>
+                      <p className="text-gray-600 text-sm md:text-base">Sectoarele 2, 3 și 4 din București</p>
                     </div>
                   </CardContent>
                 </Card>
 
                 <Card>
-                  <CardContent className="flex items-start gap-4 p-6">
-                    <div className="bg-amber-100 p-3 rounded-full">
+                  <CardContent className="flex items-start gap-4 p-4 md:p-6">
+                    <div className="bg-amber-100 p-3 rounded-full flex-shrink-0">
                       <Clock className="h-6 w-6 text-amber-700" />
                     </div>
                     <div>
                       <h4 className="font-medium text-lg mb-1">Program Livrări</h4>
-                      <p className="text-gray-600">Luni - Duminică: 10:00 - 21:00</p>
+                      <p className="text-gray-600 text-sm md:text-base">Luni - Duminică: 10:00 - 21:00</p>
                     </div>
                   </CardContent>
                 </Card>
 
                 <Card>
-                  <CardContent className="flex items-start gap-4 p-6">
-                    <div className="bg-amber-100 p-3 rounded-full">
+                  <CardContent className="flex items-start gap-4 p-4 md:p-6">
+                    <div className="bg-amber-100 p-3 rounded-full flex-shrink-0">
                       <Truck className="h-6 w-6 text-amber-700" />
                     </div>
                     <div>
                       <h4 className="font-medium text-lg mb-1">Taxă de Livrare</h4>
-                      <p className="text-gray-600">15 lei pentru comenzi sub 100 lei</p>
-                      <p className="text-gray-600">Gratuită pentru comenzi peste 100 lei</p>
+                      <p className="text-gray-600 text-sm md:text-base">15 lei pentru comenzi sub 100 lei</p>
+                      <p className="text-gray-600 text-sm md:text-base">Gratuită pentru comenzi peste 100 lei</p>
                     </div>
                   </CardContent>
                 </Card>
 
                 <Card>
-                  <CardContent className="flex items-start gap-4 p-6">
-                    <div className="bg-amber-100 p-3 rounded-full">
+                  <CardContent className="flex items-start gap-4 p-4 md:p-6">
+                    <div className="bg-amber-100 p-3 rounded-full flex-shrink-0">
                       <PhoneCall className="h-6 w-6 text-amber-700" />
                     </div>
                     <div>
                       <h4 className="font-medium text-lg mb-1">Comenzi Telefonice</h4>
-                      <p className="text-gray-600">0770 285 661</p>
+                      <p className="text-gray-600 text-sm md:text-base">0770 285 661</p>
                     </div>
                   </CardContent>
                 </Card>

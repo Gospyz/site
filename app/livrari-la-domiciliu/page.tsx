@@ -97,10 +97,10 @@ export default function LivrariLaDomiciliu() {
                 </Card>
               </div>
 
-              <div className="mt-8">
+              {/*<div className="mt-8">
                 <h3 className="text-2xl font-semibold mb-6 text-amber-800">Meniu Disponibil pentru Livrare</h3>
                 <Button className="bg-amber-700 hover:bg-amber-800 w-full">Descarcă Meniul PDF</Button>
-              </div>
+              </div>*/}
             </div>
 
             {/* Order Form */}

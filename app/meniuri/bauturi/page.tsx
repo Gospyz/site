@@ -48,7 +48,7 @@ const initialProducts: Product[] = [
     price: "12",
     description: "Apă plată, 750ml",
     category: "racoritoare",
-    image: "/apa-plata-75.jpg"
+    image: "/Apa-plata-75.jpg"
   },
   {
     id: "4",
@@ -212,7 +212,7 @@ const initialProducts: Product[] = [
     price: "35",
     description: "Whisky scotian  , 100ml",
     category: "whisky",
-    image: "/chivas.png?height=200&width=300&text=Chivas+Regal"
+    image: "/Chivas.png?height=200&width=300&text=Chivas+Regal"
   },
   {
     id: "23",
@@ -344,7 +344,7 @@ const initialProducts: Product[] = [
     price: "40",
     description: "Vin alb sau roze, 1L",
     category: "vinuri",
-    image: "/vin.jpg?height=200&width=300&text=Feteasca+Neagra"
+    image: "/vin.jpg?height=200&width=300&text=Vinul+Casei"
   },
   {
     id: "38",
@@ -352,7 +352,7 @@ const initialProducts: Product[] = [
     price: "35",
     description: "Vin alb sec, cu arome de piersici și flori de tei",
     category: "vinuri",
-    image: "/jidvei-riesling.jpg?height=200&width=300&text=Feteasca+Neagra"
+    image: "/Jidvei-Riesling.jpg?height=200&width=300&text=jidvei+riesling"
   },
   {
     id: "39",
@@ -360,7 +360,7 @@ const initialProducts: Product[] = [
     price: "3",
     description: "Vin alb sau roze, 0,75L",
     category: "vinuri",
-    image: "/pelin.jpg?height=200&width=300&text=Feteasca+Neagra"
+    image: "/pelin.jpg?height=200&width=300&text=Pelin+Urlati"
   },
   {
     id: "40",
@@ -368,7 +368,7 @@ const initialProducts: Product[] = [
     price: "45",
     description: "Vin roșu sec, corpulent cu arome de fructe negre",
     category: "vinuri",
-    image: "/jidvei-fata.jpg?height=200&width=300&text=Feteasca+Neagra"
+    image: "/jidvei-fata.jpg?height=200&width=300&text=Jidvei+Fata+in+Iarba"
   },
   {
     id: "41",
@@ -376,7 +376,7 @@ const initialProducts: Product[] = [
     price: "35",
     description: "Vin alb sec, cu arome de flori de tei și piersici",
     category: "vinuri",
-    image: "/jidvei-alb.jpg?height=200&width=300&text=Feteasca+Neagra"
+    image: "/jidvei-alb.jpg?height=200&width=300&text=Jidvei+Alb+Traditional"
   },
   {
     id: "42",
@@ -392,7 +392,7 @@ const initialProducts: Product[] = [
     price: "45",
     description: "Vin alb sec, cu arome de flori de tei și piersici",
     category: "vinuri",
-    image: "/castel-huniade.jpg?height=200&width=300&text=Feteasca+Neagra"
+    image: "/castel-huniade.jpg?height=200&width=300&text=Castel+Huniade"
   },
   {
     id: "44",
@@ -400,7 +400,7 @@ const initialProducts: Product[] = [
     price: "55",
     description: "Vin roze demisec, cu arome de fructe roșii",
     category: "vinuri",
-    image: "/mateus.jpg?height=200&width=300&text=Feteasca+Neagra"
+    image: "/mateus.jpg?height=200&width=300&text=Mateus+Rose"
   },
   {
     id: "45",
@@ -408,7 +408,7 @@ const initialProducts: Product[] = [
     price: "65",
     description: "Vin alb sec, cu arome de flori de tei și piersici",
     category: "vinuri",
-    image: "/purcari.jpg?height=200&width=300&text=Feteasca+Neagra"
+    image: "/purcari.jpg?height=200&width=300&text=Purcari+1827+Alb"
   },
   // Bere
   {
@@ -441,7 +441,7 @@ const initialProducts: Product[] = [
     price: "9",
     description: "Bere blondă românească, 500ml",
     category: "bere",
-    image: "/staropramen.jpg?height=200&width=300&text=staropramen"
+    image: "/Staropramen.jpg?height=200&width=300&text=staropramen"
   },
   {
     id: "50",

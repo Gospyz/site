@@ -9,7 +9,7 @@ export default function Navigation() {
     const [menuOpen, setMenuOpen] = useState(false)
     return (
         <nav className="bg-black text-white">
-            <div className="container mx-auto flex items-center justify-between px-4 py-2"
+            <div className="container mx-auto flex items-center justify-between px-4 py-2 z-999"
                 onMouseLeave={() => setMenuOpen(false)}>
                 <div className="flex-shrink-0">
                     <Link href="/">
@@ -29,7 +29,7 @@ export default function Navigation() {
                             Meniuri <ChevronDown className="ml-1 h-4 w-4" />
                         </button>
                         <div
-                            className={`absolute left-0 mt-2 w-56 bg-black shadow-lg rounded-md ${menuOpen ? "block" : "hidden group-hover:block"} z-10`}
+                            className={`absolute left-0 mt-2 w-56 bg-black shadow-lg rounded-md ${menuOpen ? "block" : "hidden group-hover:block"} z-999`}
                         >
                             <Link
                                 href="/meniuri/zilnic"

@@ -32,7 +32,7 @@ const initialProducts: Product[] = [
     price: "8",
     description: "Oua ochiuri (2 bucati)",
     category: "mic-dejun",
-    image: "/oua-ochiuri.jpg?height=200&width=300&text=Oua+Ochiuri"
+    image: "/Oua-ochiuri.jpg?height=200&width=300&text=Oua+Ochiuri"
   },
   {
     id: "2",
@@ -89,7 +89,7 @@ const initialProducts: Product[] = [
     price: "18",
     description: "Ciorbă de perișoare din carne de porc și vită, cu legume proaspete și verdeață",
     category: "ciorbe",
-    image: "/ciorba-perisoare.jpg?height=200&width=300&text=Ciorba+Perisoare"
+    image: "/Ciorba-perisoare.jpg?height=200&width=300&text=Ciorba+Perisoare"
   },
   {
     id: "9",
@@ -288,7 +288,7 @@ const initialProducts: Product[] = [
     price: "4",
     description: "Smântână clasică, 50g",
     category: "sosuri-diverse",
-    image: "/smantana.jpg?height=200&width=300&text=Smantana"
+    image: "/Smantana.jpg?height=200&width=300&text=Smantana"
   },
   {
     id: "33",
@@ -669,7 +669,7 @@ export default function MeniuSpecialitati() {
                               src={product.image || "/placeholder.svg?height=200&width=300&text=Preparat"}
                               alt={product.name}
                               fill
-                              className="object-cover"
+                              className="object-content"
                             />
                           </div>
                           <CardContent className="p-3">

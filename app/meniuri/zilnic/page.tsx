@@ -48,6 +48,17 @@ export default function MeniuZilnic() {
                 <div className="mt-6 text-sm text-gray-500">
                   <p>Pentru informații despre meniul zilei, vă rugăm să ne contactați.</p>
                 </div>
+
+                <div className="mt-8">
+                  <a 
+                    href="https://restaurantminish.ro/meniu" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-block bg-amber-700 hover:bg-amber-800 text-white font-semibold py-3 px-6 rounded-lg shadow-lg transition-colors duration-200 text-center"
+                  >
+                    Dacă dorești să vizualizezi meniul - apasă aici
+                  </a>
+                </div>
               </div>
             </div>
           </div>

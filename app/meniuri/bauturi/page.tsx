@@ -32,7 +32,7 @@ const initialProducts: Product[] = [
     price: "8",
     description: "Apă plată, 500ml",
     category: "racoritoare",
-    image: "/apa-plata.jpg"
+    image: "/plata1.jpg"
   },
   {
     id: "2",
@@ -40,7 +40,7 @@ const initialProducts: Product[] = [
     price: "8",
     description: "Apă minerală naturală, 500ml",
     category: "racoritoare",
-    image: "/apa-minerala.png"
+    image: "/minerala.jpg"
   },
   {
     id: "3",
@@ -48,7 +48,7 @@ const initialProducts: Product[] = [
     price: "12",
     description: "Apă plată, 750ml",
     category: "racoritoare",
-    image: "/Apa-plata-75.jpg"
+    image: "/plata.jpg"
   },
   {
     id: "4",
@@ -56,7 +56,7 @@ const initialProducts: Product[] = [
     price: "12",
     description: "Apă minerală naturală, 750ml",
     category: "racoritoare",
-    image: "/apa-minerala-75.jpg"
+    image: "/minerala1.jpg"
   },
   {
     id: "5",
@@ -300,7 +300,7 @@ const initialProducts: Product[] = [
   {
     id: "32",
     name: "Fernet",
-    price: "12",
+    price: "10",
     description: "Fernet, 100ml",
     category: "diverse",
     image: "/fernet.jpg?height=200&width=300&text=Fernet"
@@ -324,7 +324,7 @@ const initialProducts: Product[] = [
   {
     id: "35",
     name: "Jagermeister",
-    price: "25",
+    price: "30",
     description: "Rom spiced, 100ml",
     category: "diverse",
     image: "/jagermeister.png?height=200&width=300&text=Jagermeister"
@@ -357,7 +357,7 @@ const initialProducts: Product[] = [
   {
     id: "39",
     name: "Pelin Urlati Alb/Rose 0,75L",
-    price: "3",
+    price: "35",
     description: "Vin alb sau roze, 0,75L",
     category: "vinuri",
     image: "/pelin.jpg?height=200&width=300&text=Pelin+Urlati"

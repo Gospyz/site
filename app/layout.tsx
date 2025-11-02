@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "Restaurant Minish",
     images: [
       {
-        url: "/hero.jpg", // Imaginea pentru preview
+        url: "/logo4.png", // Imaginea pentru preview
         width: 1200,
         height: 630,
         alt: "Restaurant Minish - Preparate tradiționale",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Restaurant Minish",
     description: "Restaurant tradițional cu preparate autentice, organizare de evenimente și servicii de livrare la domiciliu.",
-    images: ["/hero.jpg"],
+    images: ["/logo4.png"],
   },
 }
 

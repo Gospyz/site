@@ -36,8 +36,8 @@ export default function LivrariLaDomiciliu() {
           <div className="max-w-3xl mx-auto text-center mb-12">
             <h2 className="text-3xl font-bold mb-6 text-amber-800">Comandă preparatele tale preferate</h2>
             <p className="text-lg text-gray-700">
-              Vă oferim servicii de livrare la domiciliu în sectoarele 2, 3 și 4, pentru a vă aduce savoarea
-              preparatelor, direct în confortul casei voastre.
+              Ne cerem scuze pentru inconvenient. Livrările la domiciliu vor fi disponibile în curând.
+              Vă mulțumim pentru înțelegere și răbdare!
             </p>
           </div>
 
@@ -84,14 +84,14 @@ export default function LivrariLaDomiciliu() {
                   </CardContent>
                 </Card>
 
-                 <Card>
+                <Card>
                   <CardContent className="flex items-start gap-4 p-6">
-                   <div className="bg-amber-100 p-3 rounded-full">
-                    <PhoneCall className="h-6 w-6 text-amber-700" />
+                    <div className="bg-amber-100 p-3 rounded-full">
+                      <PhoneCall className="h-6 w-6 text-amber-700" />
                     </div>
                     <div>
-                    <h4 className="font-medium text-lg mb-1">Comenzi Telefonice</h4>
-                      <p className="text-gray-600">0712 345 678</p>
+                      <h4 className="font-medium text-lg mb-1">Comenzi Telefonice</h4>
+                      <p className="text-gray-600">0770 285 661</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -104,7 +104,7 @@ export default function LivrariLaDomiciliu() {
             </div>
 
             {/* Order Form */}
-           {/* <div>
+            {/* <div>
               <h3 className="text-2xl font-semibold mb-6 text-amber-800">Comandă Online</h3>
 
               <form className="space-y-4 bg-amber-50 p-6 rounded-lg">

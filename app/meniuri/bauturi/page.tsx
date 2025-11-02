@@ -25,87 +25,115 @@ type Product = {
 
 // Date hardcodate pentru băuturi
 const initialProducts: Product[] = [
-  // Vinuri
+  // Răcoritoare
   {
     id: "1",
-    name: "Fetească Neagră",
-    price: "45",
-    description: "Vin roșu sec, corpulent cu arome de fructe negre și note condimentate",
-    category: "vinuri",
-    image: "/placeholder.svg?height=200&width=300&text=Feteasca+Neagra"
+    name: "Apă plată 0.5L",
+    price: "8",
+    description: "Apă plată, 500ml",
+    category: "racoritoare",
+    image: "/apa-plata.jpg"
   },
   {
     id: "2",
-    name: "Chardonnay",
-    price: "42",
-    description: "Vin alb sec, elegant cu arome florale și note de citrice",
-    category: "vinuri",
-    image: "/placeholder.svg?height=200&width=300&text=Chardonnay"
+    name: "Apă minerală 0.5L",
+    price: "8",
+    description: "Apă minerală naturală, 500ml",
+    category: "racoritoare",
+    image: "/apa-minerala.png"
   },
   {
     id: "3",
-    name: "Cabernet Sauvignon",
-    price: "52",
-    description: "Vin roșu de calitate superioară, cu tannini puternici și gust persistent",
-    category: "vinuri",
-    image: "/placeholder.svg?height=200&width=300&text=Cabernet"
+    name: "Apă plată 0.75L",
+    price: "12",
+    description: "Apă plată, 750ml",
+    category: "racoritoare",
+    image: "/apa-plata-75.jpg"
   },
-  
-  // Cocktailuri
   {
     id: "4",
-    name: "Mojito",
-    price: "28",
-    description: "Rom alb, lime, mentă proaspătă și apă minerală",
-    category: "cocktailuri",
-    image: "/placeholder.svg?height=200&width=300&text=Mojito"
+    name: "Apă minerală 0.75L",
+    price: "12",
+    description: "Apă minerală naturală, 750ml",
+    category: "racoritoare",
+    image: "/apa-minerala-75.jpg"
   },
   {
     id: "5",
-    name: "Cosmopolitan",
-    price: "32",
-    description: "Vodka, triplu sec, suc de afine și lime",
-    category: "cocktailuri",
-    image: "/placeholder.svg?height=200&width=300&text=Cosmopolitan"
+    name: "Coca-Cola / Zero 0.33L",
+    price: "12",
+    description: "Coca-Cola, 330ml",
+    category: "racoritoare",
+    image: "/coca-cola.jpg"
   },
   {
     id: "6",
-    name: "Old Fashioned",
-    price: "35",
-    description: "Whiskey bourbon, zahăr brun, bitters și coajă de portocală",
-    category: "cocktailuri",
-    image: "/placeholder.svg?height=200&width=300&text=Old+Fashioned"
+    name: "Fanta 0.33L",
+    price: "12",
+    description: "Fanta, 330ml",
+    category: "racoritoare",
+    image: "/fanta.jpg"
   },
-  
-  // Băuturi răcoritoare
   {
     id: "7",
-    name: "Limonadă Naturală",
-    price: "15",
-    description: "Lămâi proaspete, zahăr și apă minerală",
+    name: "Sprite 0.33L",
+    price: "12",
+    description: "Sprite, 330ml",
     category: "racoritoare",
-    image: "/placeholder.svg?height=200&width=300&text=Limonada"
+    image: "/sprite.png"
   },
   {
     id: "8",
-    name: "Suc Natural de Portocale",
-    price: "18",
-    description: "100% suc natural de portocale proaspăt stors",
+    name: "Prigat 0.33L",
+    price: "13",
+    description: "Prigat, 330ml",
     category: "racoritoare",
-    image: "/placeholder.svg?height=200&width=300&text=Suc+Portocale"
+    image: "/prigat.png"
   },
   {
     id: "9",
-    name: "Apă Minerală",
-    price: "8",
-    description: "Apă minerală naturală, plată sau carbogazoasă",
+    name: "Red Bull 0.25L",
+    price: "14",
+    description: "Red Bull, 250ml",
     category: "racoritoare",
-    image: "/placeholder.svg?height=200&width=300&text=Apa+Minerala"
+    image: "/red-bull.jpg"
   },
-  
-  // Cafea și ceai
   {
     id: "10",
+    name: "Fuzetea 0.5L",
+    price: "15",
+    description: "Fuzetea, 500ml",
+    category: "racoritoare",
+    image: "/fuze-tea.jpg"
+  },
+  {
+    id: "11",
+    name: "Schweppes tonic 0.5L",
+    price: "15",
+    description: "Schweppes tonic, 500ml",
+    category: "racoritoare",
+    image: "/schewpp.jpg"
+  },
+  {
+    id: "12",
+    name: "Schweppes lemon 0.5L",
+    price: "15",
+    description: "Schweppes lemon, 500ml",
+    category: "racoritoare",
+    image: "/schw-lemon.jpg"
+  },
+  {
+    id: "13",
+    name: "Limonadă naturală 0.5L",
+    price: "20",
+    description: "Limonadă casei, 500ml",
+    category: "racoritoare",
+    image: "/limonada.jpg"
+  },
+  
+  // Cafea
+  {
+    id: "14",
     name: "Espresso",
     price: "12",
     description: "Cafea italiană tradițională, aromată și intensă",
@@ -113,7 +141,7 @@ const initialProducts: Product[] = [
     image: "/placeholder.svg?height=200&width=300&text=Espresso"
   },
   {
-    id: "11",
+    id: "15",
     name: "Cappuccino",
     price: "16",
     description: "Espresso cu spumă de lapte și pudră de cacao",
@@ -121,12 +149,98 @@ const initialProducts: Product[] = [
     image: "/placeholder.svg?height=200&width=300&text=Cappuccino"
   },
   {
-    id: "12",
+    id: "16",
     name: "Ceai Verde",
     price: "14",
     description: "Ceai verde premium cu proprietăți antioxidante",
     category: "cafea",
     image: "/placeholder.svg?height=200&width=300&text=Ceai+Verde"
+  },
+
+  // Vodka
+  {
+    id: "17",
+    name: "Vodka Finlandia",
+    price: "15",
+    description: "Vodka premium finlandeză, 40ml",
+    category: "vodka",
+    image: "/placeholder.svg?height=200&width=300&text=Vodka+Finlandia"
+  },
+
+  // Whisky
+  {
+    id: "18",
+    name: "Jack Daniel's",
+    price: "18",
+    description: "Whisky american Tennessee, 40ml",
+    category: "whisky",
+    image: "/placeholder.svg?height=200&width=300&text=Jack+Daniels"
+  },
+
+  // Cocktail
+  {
+    id: "19",
+    name: "Mojito",
+    price: "28",
+    description: "Rom alb, lime, mentă proaspătă și apă minerală",
+    category: "cocktail",
+    image: "/placeholder.svg?height=200&width=300&text=Mojito"
+  },
+  {
+    id: "20",
+    name: "Cosmopolitan",
+    price: "32",
+    description: "Vodka, triplu sec, suc de afine și lime",
+    category: "cocktail",
+    image: "/placeholder.svg?height=200&width=300&text=Cosmopolitan"
+  },
+  {
+    id: "21",
+    name: "Old Fashioned",
+    price: "35",
+    description: "Whiskey bourbon, zahăr brun, bitters și coajă de portocală",
+    category: "cocktail",
+    image: "/placeholder.svg?height=200&width=300&text=Old+Fashioned"
+  },
+
+  // Coniac
+  {
+    id: "22",
+    name: "Hennessy VS",
+    price: "25",
+    description: "Coniac francez premium, 40ml",
+    category: "coniac",
+    image: "/placeholder.svg?height=200&width=300&text=Hennessy"
+  },
+
+  // Diverse
+  {
+    id: "23",
+    name: "Țuică de prune",
+    price: "12",
+    description: "Țuică tradițională de prune, 50ml",
+    category: "diverse",
+    image: "/placeholder.svg?height=200&width=300&text=Tuica"
+  },
+
+  // Vinuri
+  {
+    id: "24",
+    name: "Fetească Neagră",
+    price: "45",
+    description: "Vin roșu sec, corpulent cu arome de fructe negre",
+    category: "vinuri",
+    image: "/placeholder.svg?height=200&width=300&text=Feteasca+Neagra"
+  },
+
+  // Bere
+  {
+    id: "25",
+    name: "Ursus",
+    price: "10",
+    description: "Bere blondă românească, 500ml",
+    category: "bere",
+    image: "/placeholder.svg?height=200&width=300&text=Ursus"
   }
 ]
 
@@ -142,19 +256,16 @@ export default function MeniuBauturi() {
     name: "",
     price: "",
     description: "",
-    category: "vinuri",
+    category: "racoritoare",
     image: "/placeholder.svg?height=200&width=300&text=Nou+Preparat",
   })
 
   // Încărcăm produsele din localStorage la încărcarea paginii
   useEffect(() => {
-    const savedProducts = localStorage.getItem("meniuBauturiProducts")
-    if (savedProducts) {
-      setProducts(JSON.parse(savedProducts))
-    } else {
-      // Dacă nu există date salvate, folosim datele hardcodate
-      setProducts(initialProducts)
-    }
+    // Forțăm folosirea produselor hardcodate noi
+    setProducts(initialProducts)
+    // Șterge produsele vechi din localStorage pentru a începe cu datele noi
+    localStorage.removeItem("meniuBauturiProducts")
   }, [])
 
   // Salvăm produsele în localStorage când se modifică
@@ -275,10 +386,15 @@ export default function MeniuBauturi() {
                         <SelectValue placeholder="Selectați o categorie" />
                       </SelectTrigger>
                       <SelectContent>
+                        <SelectItem value="racoritoare">Răcoritoare</SelectItem>
+                        <SelectItem value="cafea">Cafea</SelectItem>
+                        <SelectItem value="vodka">Vodka</SelectItem>
+                        <SelectItem value="whisky">Whisky</SelectItem>
+                        <SelectItem value="cocktail">Cocktail</SelectItem>
+                        <SelectItem value="coniac">Coniac</SelectItem>
+                        <SelectItem value="diverse">Diverse</SelectItem>
                         <SelectItem value="vinuri">Vinuri</SelectItem>
-                        <SelectItem value="cocktailuri">Cocktailuri</SelectItem>
-                        <SelectItem value="racoritoare">Băuturi Răcoritoare</SelectItem>
-                        <SelectItem value="cafea">Cafea și Ceai</SelectItem>
+                        <SelectItem value="bere">Bere</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>
@@ -360,10 +476,15 @@ export default function MeniuBauturi() {
             <Tabs defaultValue="toate" onValueChange={setSelectedCategory}>
               <TabsList className="mb-6 mx-auto">
                 <TabsTrigger value="toate">Toate</TabsTrigger>
-                <TabsTrigger value="vinuri">Vinuri</TabsTrigger>
-                <TabsTrigger value="cocktailuri">Cocktailuri</TabsTrigger>
                 <TabsTrigger value="racoritoare">Răcoritoare</TabsTrigger>
-                <TabsTrigger value="cafea">Cafea și Ceai</TabsTrigger>
+                <TabsTrigger value="cafea">Cafea</TabsTrigger>
+                <TabsTrigger value="vodka">Vodka</TabsTrigger>
+                <TabsTrigger value="whisky">Whisky</TabsTrigger>
+                <TabsTrigger value="cocktail">Cocktail</TabsTrigger>
+                <TabsTrigger value="coniac">Coniac</TabsTrigger>
+                <TabsTrigger value="diverse">Diverse</TabsTrigger>
+                <TabsTrigger value="vinuri">Vinuri</TabsTrigger>
+                <TabsTrigger value="bere">Bere</TabsTrigger>
               </TabsList>
 
               <TabsContent value={selectedCategory} className="mt-0">
@@ -376,7 +497,7 @@ export default function MeniuBauturi() {
                             src={product.image || "/placeholder.svg?height=200&width=300&text=Bautura"}
                             alt={product.name}
                             fill
-                            className="object-cover"
+                            className="object-contain"
                           />
                         </div>
                         <CardContent className="p-3">
@@ -385,17 +506,29 @@ export default function MeniuBauturi() {
                             <p className="font-bold text-amber-700 text-sm">{product.price} lei</p>
                           </div>
                           <p className="text-xs text-gray-500 capitalize mb-2">
-                            {product.category === "vinuri"
-                              ? "Vin"
-                              : product.category === "cocktailuri"
-                                ? "Cocktail"
-                                : product.category === "racoritoare"
-                                  ? "Băutură Răcoritoare"
-                                  : "Cafea/Ceai"}
+                            {product.category === "racoritoare"
+                              ? "Răcoritoare"
+                              : product.category === "cafea"
+                                ? "Cafea"
+                                : product.category === "vodka"
+                                  ? "Vodka"
+                                  : product.category === "whisky"
+                                    ? "Whisky"
+                                    : product.category === "cocktail"
+                                      ? "Cocktail"
+                                      : product.category === "coniac"
+                                        ? "Coniac"
+                                        : product.category === "diverse"
+                                          ? "Diverse"
+                                          : product.category === "vinuri"
+                                            ? "Vinuri"
+                                            : product.category === "bere"
+                                              ? "Bere"
+                                              : "Altele"}
                           </p>
                           {product.description && <p className="text-xs text-gray-700 mb-3 line-clamp-2">{product.description}</p>}
                           <div className="flex gap-2 mt-2">
-                           {/*} <Button variant="outline" size="sm" onClick={() => handleEditProduct(product)}>
+                            {/*} <Button variant="outline" size="sm" onClick={() => handleEditProduct(product)}>
                               <Edit className="mr-1 h-4 w-4" />
                               Editează
                             </Button>*/}

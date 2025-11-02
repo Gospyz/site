@@ -25,108 +25,393 @@ type Product = {
 
 // Date hardcodate pentru specialități
 const initialProducts: Product[] = [
-  // Preparate Tradiționale
+  // Mic Dejun
   {
     id: "1",
-    name: "Sarmale în foi de varză",
-    price: "28",
-    description: "Sarmale tradiționale cu carne de porc și vită, servite cu smântână și mămăligă",
-    category: "traditionale",
-    image: "/placeholder.svg?height=200&width=300&text=Sarmale"
+    name: "Oua ochiuri (2 bucati)",
+    price: "8",
+    description: "Oua ochiuri (2 bucati)",
+    category: "mic-dejun",
+    image: "/oua-ochiuri.jpg?height=200&width=300&text=Oua+Ochiuri"
   },
   {
     id: "2",
-    name: "Mici cu muștar",
-    price: "22",
-    description: "Mici din carne de vită și porc, grătare pe jar, serviți cu muștar și pâine",
-    category: "traditionale",
-    image: "/placeholder.svg?height=200&width=300&text=Mici"
+    name: "Omletă simplă",
+    price: "12",
+    description: "Omletă simplă din 2 ouă",
+    category: "mic-dejun",
+    image: "/omleta-simpla.jpg?height=200&width=300&text=Omleta+Simpla"
   },
   {
     id: "3",
-    name: "Ciorbă de burtă",
-    price: "18",
-    description: "Ciorbă tradițională de burtă cu smântână, usturoi și oțet",
-    category: "traditionale",
-    image: "/placeholder.svg?height=200&width=300&text=Ciorba+Burta"
+    name: "Omletă taranească",
+    price: "15",
+    description: "Omletă taranească din 2 ouă, bacon 50g, ardei gras 50g, ceapă 30g.",
+    category: "mic-dejun",
+    image: "/omleta-taraneasca.jpg?height=200&width=300&text=Omleta+Taraneasca"
   },
-  
-  // Specialitățile Chef-ului
   {
     id: "4",
-    name: "File de somon glazurat",
-    price: "48",
-    description: "File de somon proaspăt cu glazură de miere și ierburi aromate, garnitură de legume",
-    category: "chef",
-    image: "/placeholder.svg?height=200&width=300&text=Somon"
+    name: "Omletă cu cașcaval",
+    price: "14",
+    description: "Omletă cu cașcaval din 2 ouă si 70g cașcaval.",
+    category: "mic-dejun",
+    image: "/omleta-cascaval.jpg?height=200&width=300&text=Omleta+Casacaval"
   },
+  // Ciorbe
   {
     id: "5",
-    name: "Mușchi de vită Wellington",
-    price: "65",
-    description: "Mușchi de vită în foietaj cu ciuperci și pate de ficat, sos de vin roșu",
-    category: "chef",
-    image: "/placeholder.svg?height=200&width=300&text=Wellington"
+    name: "Ciorbă de burtă",
+    price: "20",
+    description: "Ciorbă tradițională de burtă cu smântână, usturoi și oțet",
+    category: "ciorbe",
+    image: "/ciorba-burta.jpg?height=200&width=300&text=Ciorba+Burta"
   },
   {
     id: "6",
-    name: "Rack de miel cu ierburi",
-    price: "55",
-    description: "Coastă de miel marinată în ierburi mediteraneene, garnitură de cartofi gratinați",
-    category: "chef",
-    image: "/placeholder.svg?height=200&width=300&text=Miel"
+    name: "Ciorbă de vacută",
+    price: "20",
+    description: "Ciorbă de vacută cu bucatele fragede de carne de vita, zarzavaturi si legume de sezon",
+    category: "ciorbe",
+    image: "/ciorba-vacuta.jpeg?height=200&width=300&text=Ciorba+Vacuta"
   },
-  
-  // Preparate Internaționale
   {
     id: "7",
-    name: "Risotto cu ciuperci porcini",
-    price: "32",
-    description: "Risotto cremos cu ciuperci porcini, parmezan și trufe",
-    category: "internationale",
-    image: "/placeholder.svg?height=200&width=300&text=Risotto"
+    name: "Ciorbă de porc taranească",
+    price: "18",
+    description: "Ciorbă de porc taranească cu legume proaspete și verdeață",
+    category: "ciorbe",
+    image: "/ciorba-taraneasca.jpg?height=200&width=300&text=Ciorba+Porc+Taraneasca"
   },
   {
     id: "8",
-    name: "Pasta Carbonara",
-    price: "26",
-    description: "Spaghetti cu bacon, ou, parmezan și piper negru proaspăt măcinat",
-    category: "internationale",
-    image: "/placeholder.svg?height=200&width=300&text=Carbonara"
+    name: "Ciorbă de perișoare",
+    price: "18",
+    description: "Ciorbă de perișoare din carne de porc și vită, cu legume proaspete și verdeață",
+    category: "ciorbe",
+    image: "/ciorba-perisoare.jpg?height=200&width=300&text=Ciorba+Perisoare"
   },
   {
     id: "9",
-    name: "Paella Valenciana",
-    price: "38",
-    description: "Paella tradițională cu pui, fructe de mare, legume și șofran",
-    category: "internationale",
-    image: "/placeholder.svg?height=200&width=300&text=Paella"
+    name: "Ciorbă de legume",
+    price: "14",
+    description: "Ciorbă de legume proaspete, cu zarzavaturi și verdeață",
+    category: "ciorbe",
+    image: "/ciorba-legume.jpg?height=200&width=300&text=Ciorba+Legume"
   },
-  
-  // Preparate de Sezon
   {
     id: "10",
-    name: "Ciorbă de ciuperci de pădure",
-    price: "16",
-    description: "Ciorbă de sezon cu ciuperci proaspete de pădure și smântână",
-    category: "sezon",
-    image: "/placeholder.svg?height=200&width=300&text=Ciorba+Ciuperci"
+    name: "Ciorbă de afumatura",
+    price: "18",
+    description: " Ciorba de afumatura acrita cu bors, cu multe legume si leustean aromat.",
+    category: "ciorbe",
+    image: "/ciorba-afumatura.jpg?height=200&width=300&text=Ciorba+Afumatura"
   },
   {
     id: "11",
-    name: "Salată de dovleac copt",
-    price: "20",
-    description: "Dovleac copt cu brânză de capră, nuci și dressing de miere",
-    category: "sezon",
-    image: "/placeholder.svg?height=200&width=300&text=Salata+Dovleac"
+    name: "Ciorbă de pui",
+    price: "18",
+    description: " Ciorba de pui cu legume proaspete si verdeata.",
+    category: "ciorbe",
+    image: "/ciorba-cu-pui.jpg?height=200&width=300&text=Ciorba+Pui"
   },
+
+  // Grătar
   {
     id: "12",
-    name: "Supă cremă de castane",
-    price: "14",
-    description: "Supă cremă de castane cu aromă de rozmarin și crutoane",
-    category: "sezon",
-    image: "/placeholder.svg?height=200&width=300&text=Supa+Castane"
+    name: "Mici 80g (vita/porc)",
+    price: "6",
+    description: "Mici din carne de vită și porc, preparati pe jar",
+    category: "gratar",
+    image: "/mititei.jpg?height=200&width=300&text=Mici"
+  },
+  {
+    id: "13",
+    name: "Mici 80g (vita/oaie)",
+    price: "7",
+    description: "Mici din carne de vită și oaie, preparati pe jar",
+    category: "gratar",
+    image: "/mititei.jpg?height=200&width=300&text=Mici"
+  },
+  {
+    id: "14",
+    name: "Carnat semiafumat de porc (1 bucata)",
+    price: "8",
+    description: "Carnat semiafumat de porc, preparat pe jar",
+    category: "gratar",
+    image: "/carnati4.jpg?height=200&width=300&text=Carnat+Semiafumat"
+  },
+  {
+    id: "15",
+    name: "Ceafa de porc 250g",
+    price: "35",
+    description: "Ceafa de porc preparata pe jar, cu cartofi prajiti, salata si paine.",
+    category: "gratar",
+    image: "/ceafa.jpg?height=200&width=300&text=Ceafa+Porc"
+  },
+  {
+    id: "16",
+    name: "Pizdulici de porc 250g",
+    price: "40",
+    description: "Pizdulici de porc, preparate pe jar",
+    category: "gratar",
+    image: "/pizdulici.jpg?height=200&width=300&text=Pizdulici+Porc"
+  },
+  {
+    id: "17",
+    name: "Curelusa de porc 250g",
+    price: "32",
+    description: "Curelusa de porc, preparata pe jar",
+    category: "gratar",
+    image: "/curelusa.jpg?height=200&width=300&text=Curelusa+Porc"
+  },
+  {
+    id: "18",
+    name: "Fleica de porc 250g",
+    price: "30",
+    description: "Fleica de porc, preparata pe jar",
+    category: "gratar",
+    image: "/fleica.jpg?height=200&width=300&text=Fleica+Porc"
+  },
+  {
+    id: "19",
+    name: "Piept de pui 250g",
+    price: "30",
+    description: "Piept de pui, preparat pe jar",
+    category: "gratar",
+    image: "/piept-pui.jpg?height=200&width=300&text=Piept+Pui"
+  },
+  {
+    id: "20",
+    name: "Pulpa de pui dezosata 250g",
+    price: "28",
+    description: "Pulpa de pui dezosata, preparata pe jar",
+    category: "gratar",
+    image: "/pulpa-dezosata.jpg?height=200&width=300&text=Pulpa+Pui"
+  },
+  {
+    id: "21",
+    name: "Frigarui de pui 120/80g",
+    price: "27",
+    description: "Frigarui de pui, preparate pe jar",
+    category: "gratar",
+    image: "/frigarui-de-pui.jpg?height=200&width=300&text=Frigarui+Pui"
+  },
+  {
+    id: "22",
+    name: "Pastrama de oaie 300g",
+    price: "45",
+    description: "Pastrama de oaie, preparata pe jar",
+    category: "gratar",
+    image: "/pastrama-de-oaie.jpg?height=200&width=300&text=Pastrama+Oaie"
+  },
+  // Platouri
+  {
+    id: "23",
+    name: "Platou de 2 persoane",
+    price: "110",
+    description: "Ceafa de porc 200g, piept de pui 150g, carnati semiafumati 150g, mici 160g, cartofi prajiti 300g, muraturi 300g.",
+    category: "platouri",
+    image: "/platou-2.jpg?height=200&width=300&text=Platou+2+persoane"
+  },
+  {
+    id: "24",
+    name: "Platou de 4 persoane",
+    price: "210",
+    description: "Ceafa de porc 400g, piept de pui 300g, carnati semiafumati 300g, mici 320g, cartofi prajiti 600g, muraturi 400g.",
+    category: "platouri",
+    image: "/platou-4.jpg?height=200&width=300&text=Platou+4+persoane"
+  },
+
+  // Meniuri Speciale
+  {
+    id: "25",
+    name: "Meniu mici",
+    price: "28",
+    description: "Meniu mici (3 mici, cartofi prajiti 150g, mustar si paine)",
+    category: "meniuri-speciale",
+    image: "/mici-meniu.jpg?height=200&width=300&text=Meniu+Chef"
+  },
+  {
+    id: "26",
+    name: "Meniu carnati afumati",
+    price: "28",
+    description: "Meniu carnati afumati (2 carnati afumati, cartofi prajiti 150g, salata/mustar si paine)",
+    category: "meniuri-speciale",
+    image: "/meniu-carnati.jpg?height=200&width=300&text=Meniu+Chef"
+  },
+  {
+    id: "27",
+    name: "Meniu ceafa de porc",
+    price: "45",
+    description: "Meniu ceafa de porc (200g ceafa de porc, cartofi prajiti 150g, salata de varza 150g, paine)",
+    category: "meniuri-speciale",
+    image: "/meniu-ceafa.jpg?height=200&width=300&text=Meniu+Chef"
+  },
+  {
+    id: "28",
+    name: "Meniu piept de pui",
+    price: "41",
+    description: "Meniu piept de pui (200g piept de pui, cartofi prajiti 150g, salata de varza 150g, paine)",
+    category: "meniuri-speciale",
+    image: "/meniu-piept.jpg?height=200&width=300&text=Meniu+Chef"
+  },
+  {
+    id: "29",
+    name: "Meniu snitel de pui",
+    price: "41",
+    description: "Meniu snitel de pui (200g snitel de pui, cartofi prajiti 150g, salata de varza 150g, paine)",
+    category: "meniuri-speciale",
+    image: "/meniu-snitel.jpg?height=200&width=300&text=Meniu+Chef"
+  },
+
+  // Sosuri/Diverse
+  {
+    id: "30",
+    name: "Ketchup 50g",
+    price: "4",
+    description: "Sos de ketchup clasic, 50g",
+    category: "sosuri-diverse",
+    image: "/ketchup.jpg?height=200&width=300&text=Ketchup"
+  },
+  {
+    id: "31",
+    name: "Mustar 50g",
+    price: "2",
+    description: "Mustar clasic, 50g",
+    category: "sosuri-diverse",
+    image: "/mustar.jpg?height=200&width=300&text=Sos+Mustar"
+  },
+  {
+    id: "32",
+    name: "Smantana 50g",
+    price: "4",
+    description: "Smântână clasică, 50g",
+    category: "sosuri-diverse",
+    image: "/smantana.jpg?height=200&width=300&text=Smantana"
+  },
+  {
+    id: "33",
+    name: "Mujdei 50g",
+    price: "4",
+    description: "Sos de mujdei proaspăt făcut în casă, perfect pentru mici și grătar",
+    category: "sosuri-diverse",
+    image: "/mujdei.jpg?height=200&width=300&text=Sos+Mujdei"
+  },
+  {
+    id: "34",
+    name: "Branza rasa 50g",
+    price: "4",
+    description: "Brânză rasă, 50g",
+    category: "sosuri-diverse",
+    image: "/branza-rasa.jpg?height=200&width=300&text=Branza+Rasa"
+  },
+  {
+    id: "35",
+    name: "Paine",
+    price: "3",
+    description: "Pâine proaspătă, 1 felie",
+    category: "sosuri-diverse",
+    image: "/paine.jpg?height=200&width=300&text=Paine"
+  },
+  {
+    id: "36",
+    name: "Paine pe gratar",
+    price: "3",
+    description: "Pâine proaspătă prăjită pe grătar, 1 felie",
+    category: "sosuri-diverse",
+    image: "/paine-prajita.jpg?height=200&width=300&text=Paine+pe+gratar"
+  },
+  {
+    id: "37",
+    name: "Ardei iute",
+    price: "2",
+    description: "Ardei iute proaspăt, 1 bucată",
+    category: "sosuri-diverse",
+    image: "/ardei-iute.jpg?height=200&width=300&text=Ardei+iute"
+  },
+  // Salate
+  {
+    id: "38",
+    name: "Salată de varză 150g",
+    price: "8",
+    description: "Salată de varză cu morcov si mărar",
+    category: "salate",
+    image: "/salata-varza.jpg?height=200&width=300&text=salata+de+varza"
+  },
+  {
+    id: "39",
+    name: "Muraturi asortate 150g",
+    price: "12",
+    description: "Murături asortate, 150g",
+    category: "salate",
+    image: "/muraturi-asortate.jpg?height=200&width=300&text=Muraturi"
+  },
+  {
+    id: "40",
+    name: "Salată de vară 275g",
+    price: "15",
+    description: "Salată de vară cu roșii 100g, castraveți 100g, ardei gras 45g, ceapă 30g, ulei",
+    category: "salate",
+    image: "/salata-vara.jpg?height=200&width=300&text=Salată+de+vară"
+  },
+  // Garnituri
+  {
+    id: "41",
+    name: "Cartofi prăjiți 150g",
+    price: "10",
+    description: "Cartofi prăjiți crocanți și aurii",
+    category: "garnituri",
+    image: "/cartofi-prajiti.jpg?height=200&width=300&text=Cartofi"
+  },
+  {
+    id: "42",
+    name: "Mamaliga 200g",
+    price: "6",
+    description: "Mămăligă cremoasă, 200g",
+    category: "garnituri",
+    image: "/mamaliga.jpg?height=200&width=300&text=Mamaliga"
+  },
+  {
+    id: "43",
+    name: "Ciuperci la gratar 250g",
+    price: "15",
+    description: "Ciuperci gatite la grătar",
+    category: "garnituri",
+    image: "/ciuperci-la-gratar.jpg?height=200&width=300&text=Ciuperci+la+gratar"
+  },
+  {
+    id: "44",
+    name: "Piure de cartofi 200g",
+    price: "12",
+    description: "Piure de cartofi cremos, 200g",
+    category: "garnituri",
+    image: "/piure-de-cartofi.jpg?height=200&width=300&text=Piure+de+cartofi"
+  },
+  // Desert
+  {
+    id: "45",
+    name: "Papanași cu smântână si dulceata 200g",
+    price: "18",
+    description: "Papanași tradiționali cu smântână și dulceață",
+    category: "desert",
+    image: "/papanasi.jpg?height=200&width=300&text=Papanasi"
+  },
+  {
+    id: "46",
+    name: "Clatite cu gem 200g",
+    price: "15",
+    description: "Clătite pufoase umplute cu gem de fructe",
+    category: "desert",
+    image: "/clatite.jpg?height=200&width=300&text=Clatite"
+  },
+   {
+    id: "47",
+    name: "Inghetata asortata 200g",
+    price: "18",
+    description: "Inghetata asortata cu diverse arome",
+    category: "desert",
+    image: "/inghetata-asortata.jpg?height=200&width=300&text=Inghetata"
   }
 ]
 
@@ -142,19 +427,23 @@ export default function MeniuSpecialitati() {
     name: "",
     price: "",
     description: "",
-    category: "traditionale",
+    category: "mic-dejun",
     image: "/placeholder.svg?height=200&width=300&text=Nou+Preparat",
   })
 
   // Încărcăm produsele din localStorage la încărcarea paginii
   useEffect(() => {
-    const savedProducts = localStorage.getItem("meniuSpecialitatiProducts")
-    if (savedProducts) {
-      setProducts(JSON.parse(savedProducts))
-    } else {
-      // Dacă nu există date salvate, folosim datele hardcodate
-      setProducts(initialProducts)
-    }
+    // Forțăm folosirea produselor noi hardcodate (temporar pentru a vedea noile categorii)
+    setProducts(initialProducts)
+    localStorage.setItem("meniuSpecialitatiProducts", JSON.stringify(initialProducts))
+
+    // Codul original comentat temporar:
+    // const savedProducts = localStorage.getItem("meniuSpecialitatiProducts")
+    // if (savedProducts) {
+    //   setProducts(JSON.parse(savedProducts))
+    // } else {
+    //   setProducts(initialProducts)
+    // }
   }, [])
 
   // Salvăm produsele în localStorage când se modifică
@@ -185,7 +474,7 @@ export default function MeniuSpecialitati() {
       name: "",
       price: "",
       description: "",
-      category: "traditionale",
+      category: "mic-dejun",
       image: "/placeholder.svg?height=200&width=300&text=Nou+Preparat",
     })
   }
@@ -359,10 +648,15 @@ export default function MeniuSpecialitati() {
               <Tabs defaultValue="toate" onValueChange={setSelectedCategory}>
                 <TabsList className="mb-6 mx-auto">
                   <TabsTrigger value="toate">Toate</TabsTrigger>
-                  <TabsTrigger value="traditionale">Tradiționale</TabsTrigger>
-                  <TabsTrigger value="chef">Specialități Chef</TabsTrigger>
-                  <TabsTrigger value="internationale">Internaționale</TabsTrigger>
-                  <TabsTrigger value="sezon">De Sezon</TabsTrigger>
+                  <TabsTrigger value="mic-dejun">Mic Dejun</TabsTrigger>
+                  <TabsTrigger value="ciorbe">Ciorbe</TabsTrigger>
+                  <TabsTrigger value="gratar">Grătar</TabsTrigger>
+                  <TabsTrigger value="platouri">Platouri</TabsTrigger>
+                  <TabsTrigger value="meniuri-speciale">Meniuri Speciale</TabsTrigger>
+                  <TabsTrigger value="sosuri-diverse">Sosuri/Diverse</TabsTrigger>
+                  <TabsTrigger value="salate">Salate</TabsTrigger>
+                  <TabsTrigger value="garnituri">Garnituri</TabsTrigger>
+                  <TabsTrigger value="desert">Desert</TabsTrigger>
                 </TabsList>
 
                 <TabsContent value={selectedCategory} className="mt-0">
@@ -384,13 +678,25 @@ export default function MeniuSpecialitati() {
                               <p className="font-bold text-amber-700 text-sm">{product.price} lei</p>
                             </div>
                             <p className="text-xs text-gray-500 capitalize mb-2">
-                              {product.category === "traditionale"
-                                ? "Preparat Tradițional"
-                                : product.category === "chef"
-                                  ? "Specialitatea Chef-ului"
-                                  : product.category === "internationale"
-                                    ? "Preparat Internațional"
-                                    : "Preparat de Sezon"}
+                              {product.category === "mic-dejun"
+                                ? "Mic Dejun"
+                                : product.category === "ciorbe"
+                                  ? "Ciorbe"
+                                  : product.category === "gratar"
+                                    ? "Grătar"
+                                    : product.category === "platouri"
+                                      ? "Platouri"
+                                      : product.category === "meniuri-speciale"
+                                        ? "Meniuri Speciale"
+                                        : product.category === "sosuri-diverse"
+                                          ? "Sosuri/Diverse"
+                                          : product.category === "salate"
+                                            ? "Salate"
+                                            : product.category === "garnituri"
+                                              ? "Garnituri"
+                                              : product.category === "desert"
+                                                ? "Desert"
+                                                : "Altele"}
                             </p>
                             {product.description && <p className="text-xs text-gray-700 mb-3 line-clamp-2">{product.description}</p>}
                             <div className="flex gap-2 mt-2">

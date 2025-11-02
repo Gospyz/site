@@ -130,118 +130,367 @@ const initialProducts: Product[] = [
     category: "racoritoare",
     image: "/limonada.jpg"
   },
-  
+
   // Cafea
   {
     id: "14",
     name: "Espresso",
-    price: "12",
+    price: "7",
     description: "Cafea italiană tradițională, aromată și intensă",
     category: "cafea",
-    image: "/placeholder.svg?height=200&width=300&text=Espresso"
+    image: "/espresso.jpg?height=200&width=300&text=Espresso"
   },
   {
     id: "15",
-    name: "Cappuccino",
-    price: "16",
-    description: "Espresso cu spumă de lapte și pudră de cacao",
+    name: "Cafea cu lapte",
+    price: "8",
+    description: "Espresso cu lapte.",
     category: "cafea",
-    image: "/placeholder.svg?height=200&width=300&text=Cappuccino"
+    image: "/cafea-lapte.jpg?height=200&width=300&text=Cafea+cu+lapte"
   },
   {
     id: "16",
-    name: "Ceai Verde",
-    price: "14",
-    description: "Ceai verde premium cu proprietăți antioxidante",
+    name: "Cappucino",
+    price: "10",
+    description: "Cafea cu lapte și spumă de lapte si cacao.",
     category: "cafea",
-    image: "/placeholder.svg?height=200&width=300&text=Ceai+Verde"
+    image: "/cappucino.jpg?height=200&width=300&text=Cappuccino"
   },
-
-  // Vodka
+  {
+    id: "16a",
+    name: "Caffe latte",
+    price: "12",
+    description: "Cafea cu lapte și spumă de lapte.",
+    category: "cafea",
+    image: "/latte.jpg?height=200&width=300&text=Caffe+Latte"
+  },
   {
     id: "17",
-    name: "Vodka Finlandia",
-    price: "15",
-    description: "Vodka premium finlandeză, 40ml",
-    category: "vodka",
-    image: "/placeholder.svg?height=200&width=300&text=Vodka+Finlandia"
+    name: "Frappe cu ciocolată",
+    price: "18",
+    description: "Cafea frappe cu sirop de ciocolată și frișcă",
+    category: "cafea",
+    image: "/frappe.jpg?height=200&width=300&text=Frappe+cu+ciocolata"
   },
-
-  // Whisky
+  // Vodka
   {
     id: "18",
-    name: "Jack Daniel's",
-    price: "18",
-    description: "Whisky american Tennessee, 40ml",
-    category: "whisky",
-    image: "/placeholder.svg?height=200&width=300&text=Jack+Daniels"
+    name: "Vodka Stalinskaya",
+    price: "16",
+    description: "Vodka Stalinskaya, 100ml",
+    category: "vodka",
+    image: "/stalinskaya.png?height=200&width=300&text=Vodka+Stalinskaya"
   },
-
-  // Cocktail
   {
     id: "19",
-    name: "Mojito",
-    price: "28",
-    description: "Rom alb, lime, mentă proaspătă și apă minerală",
-    category: "cocktail",
-    image: "/placeholder.svg?height=200&width=300&text=Mojito"
+    name: "Vodka Tazovsky",
+    price: "14",
+    description: "Vodka Tazovsky, 100ml",
+    category: "vodka",
+    image: "/tazovky.jpg?height=200&width=300&text=Vodka+Tazovsky"
   },
   {
     id: "20",
-    name: "Cosmopolitan",
-    price: "32",
-    description: "Vodka, triplu sec, suc de afine și lime",
-    category: "cocktail",
-    image: "/placeholder.svg?height=200&width=300&text=Cosmopolitan"
+    name: "Vodka Absolut",
+    price: "25",
+    description: "Vodka Absolut, 100ml",
+    category: "vodka",
+    image: "/absolut.jpg?height=200&width=300&text=Vodka+Absolut"
   },
+  // Whisky
   {
     id: "21",
-    name: "Old Fashioned",
-    price: "35",
-    description: "Whiskey bourbon, zahăr brun, bitters și coajă de portocală",
-    category: "cocktail",
-    image: "/placeholder.svg?height=200&width=300&text=Old+Fashioned"
+    name: "J&B Rare Blended",
+    price: "25",
+    description: "Whisky italian, 100ml",
+    category: "whisky",
+    image: "/jb.jpg?height=200&width=300&text=JB+Rare+Blended"
   },
-
-  // Coniac
   {
     id: "22",
-    name: "Hennessy VS",
-    price: "25",
-    description: "Coniac francez premium, 40ml",
-    category: "coniac",
-    image: "/placeholder.svg?height=200&width=300&text=Hennessy"
+    name: "Chivas Regal",
+    price: "35",
+    description: "Whisky scotian  , 100ml",
+    category: "whisky",
+    image: "/chivas.png?height=200&width=300&text=Chivas+Regal"
   },
-
-  // Diverse
   {
     id: "23",
-    name: "Țuică de prune",
-    price: "12",
-    description: "Țuică tradițională de prune, 50ml",
-    category: "diverse",
-    image: "/placeholder.svg?height=200&width=300&text=Tuica"
+    name: "Red Label ",
+    price: "30",
+    description: "Whisky, 100ml",
+    category: "whisky",
+    image: "/red-label.jpg?height=200&width=300&text=Red+Label"
   },
-
-  // Vinuri
+  {
+    id: "23a",
+    name: "Jack Daniel's",
+    price: "32",
+    description: "Whisky american Tennessee, 100ml",
+    category: "whisky",
+    image: "/jack-daniels.jpg?height=200&width=300&text=Jack+Daniels"
+  },
+  // Cocktail
   {
     id: "24",
-    name: "Fetească Neagră",
+    name: "Aperol Spritz",
+    price: "30",
+    description: "Aperol, prosecco și apă minerală, 400ml",
+    category: "cocktail",
+    image: "/aperol-spritz.jpg?height=200&width=300&text=Aperol+Spritz"
+  },
+  {
+    id: "25",
+    name: "Cuba Libre",
+    price: "25",
+    description: "Rom, cola și lime, 300ml",
+    category: "cocktail",
+    image: "/cuba-libre.png?height=200&width=300&text=Cuba+Libre"
+  },
+  {
+    id: "26",
+    name: "Gin Tonic ",
+    price: "35",
+    description: "Gin, apă tonică și felii de lime, 300ml",
+    category: "cocktail",
+    image: "/gin-tonic.jpg?height=200&width=300&text=Gin+Tonic"
+  },
+  {
+    id: "27",
+    name: "Mojito",
+    price: "35",
+    description: "Rom, mentă proaspătă, lime și apă minerală, 300ml",
+    category: "cocktail",
+    image: "/mojito.jpg?height=200&width=300&text=Mojito"
+  },
+  // Coniac
+  {
+    id: "28",
+    name: "Cavadoro",
+    price: "10",
+    description: "Coniac francez premium, 100ml",
+    category: "coniac",
+    image: "/cavadoro.jpg?height=200&width=300&text=Hennessy"
+  },
+  {
+    id: "29",
+    name: "Alexandrion",
+    price: "14",
+    description: "Coniac românesc, 100ml",
+    category: "coniac",
+    image: "/alexandrion.jpg?height=200&width=300&text=Hennessy"
+  },
+  {
+    id: "30",
+    name: "Jidvei Vinars",
+    price: "25",
+    description: "Coniac românesc, 100ml",
+    category: "coniac",
+    image: "/jidvei.png?height=200&width=300&text=Hennessy"
+  },
+  // Diverse
+  {
+    id: "31",
+    name: "Gin Wembley",
+    price: "15",
+    description: "Gin englezesc, 100ml",
+    category: "diverse",
+    image: "/wembley.jpg?height=200&width=300&text=Gin+Wembley"
+  },
+  {
+    id: "32",
+    name: "Fernet",
+    price: "12",
+    description: "Fernet, 100ml",
+    category: "diverse",
+    image: "/fernet.jpg?height=200&width=300&text=Fernet"
+  },
+  {
+    id: "33",
+    name: "Tequila Camino",
+    price: "10",
+    description: "Tequila, 100ml",
+    category: "diverse",
+    image: "/camino.jpg?height=200&width=300&text=Tequila"
+  },
+  {
+    id: "34",
+    name: "Capitan Morgan",
+    price: "25",
+    description: "Rom spiced, 100ml",
+    category: "diverse",
+    image: "/morgan.jpg?height=200&width=300&text=Capitan+Morgan"
+  },
+  {
+    id: "35",
+    name: "Jagermeister",
+    price: "25",
+    description: "Rom spiced, 100ml",
+    category: "diverse",
+    image: "/jagermeister.png?height=200&width=300&text=Jagermeister"
+  },
+  // Vinuri
+  {
+    id: "36",
+    name: "Vinul Casei Alb/Rose 0,5L",
+    price: "20",
+    description: "Vin alb sau roze, 500ml",
+    category: "vinuri",
+    image: "/vin.jpg?height=200&width=300&text=Vinul+Casei"
+  },
+  {
+    id: "37",
+    name: "Vinul casei alb/rose 1l",
+    price: "40",
+    description: "Vin alb sau roze, 1L",
+    category: "vinuri",
+    image: "/vin.jpg?height=200&width=300&text=Feteasca+Neagra"
+  },
+  {
+    id: "38",
+    name: "Jidvei Riesling 0,75L",
+    price: "35",
+    description: "Vin alb sec, cu arome de piersici și flori de tei",
+    category: "vinuri",
+    image: "/jidvei-riesling.jpg?height=200&width=300&text=Feteasca+Neagra"
+  },
+  {
+    id: "39",
+    name: "Pelin Urlati Alb/Rose 0,75L",
+    price: "3",
+    description: "Vin alb sau roze, 0,75L",
+    category: "vinuri",
+    image: "/pelin.jpg?height=200&width=300&text=Feteasca+Neagra"
+  },
+  {
+    id: "40",
+    name: "Jidvei fata in iarba 0,75L",
     price: "45",
     description: "Vin roșu sec, corpulent cu arome de fructe negre",
     category: "vinuri",
-    image: "/placeholder.svg?height=200&width=300&text=Feteasca+Neagra"
+    image: "/jidvei-fata.jpg?height=200&width=300&text=Feteasca+Neagra"
   },
-
+  {
+    id: "41",
+    name: "Jidvei Alb Traditional 0,75L",
+    price: "35",
+    description: "Vin alb sec, cu arome de flori de tei și piersici",
+    category: "vinuri",
+    image: "/jidvei-alb.jpg?height=200&width=300&text=Feteasca+Neagra"
+  },
+  {
+    id: "42",
+    name: "Feteasca Neagră 0,75L",
+    price: "40",
+    description: "Vin roșu sec, cu arome de fructe negre și condimente",
+    category: "vinuri",
+    image: "/feteasca-neagra.png?height=200&width=300&text=Feteasca+Neagra"
+  },
+  {
+    id: "43",
+    name: "Castel Huniade Sec/Demi 0,75L",
+    price: "45",
+    description: "Vin alb sec, cu arome de flori de tei și piersici",
+    category: "vinuri",
+    image: "/castel-huniade.jpg?height=200&width=300&text=Feteasca+Neagra"
+  },
+  {
+    id: "44",
+    name: "Mateus Rose 0,75L",
+    price: "55",
+    description: "Vin roze demisec, cu arome de fructe roșii",
+    category: "vinuri",
+    image: "/mateus.jpg?height=200&width=300&text=Feteasca+Neagra"
+  },
+  {
+    id: "45",
+    name: "Purcari 1827 Alb 0,75L",
+    price: "65",
+    description: "Vin alb sec, cu arome de flori de tei și piersici",
+    category: "vinuri",
+    image: "/purcari.jpg?height=200&width=300&text=Feteasca+Neagra"
+  },
   // Bere
   {
-    id: "25",
-    name: "Ursus",
+    id: "46",
+    name: "Bergenbier 0.5L",
+    price: "8",
+    description: "Bere blondă românească, 500ml",
+    category: "bere",
+    image: "/bergenbier.jpg?height=200&width=300&text=Bergenbier"
+  },
+  {
+    id: "47",
+    name: "Beck's 0.5L",
+    price: "9",
+    description: "Bere blondă românească, 500ml",
+    category: "bere",
+    image: "/beks.jpg?height=200&width=300&text=Beck's"
+  },
+  {
+    id: "48",
+    name: "Caraiman 0.5L",
+    price: "9",
+    description: "Bere blondă românească, 500ml",
+    category: "bere",
+    image: "/caraiman.jpg?height=200&width=300&text=Caraiman"
+  },
+  {
+    id: "49",
+    name: "Staropramen 0.5L",
+    price: "9",
+    description: "Bere blondă românească, 500ml",
+    category: "bere",
+    image: "/staropramen.jpg?height=200&width=300&text=staropramen"
+  },
+  {
+    id: "50",
+    name: "Bere draft 0.5L",
+    price: "9",
+    description: "Bere blondă românească, 500ml",
+    category: "bere",
+    image: "/halba.jpg?height=200&width=300&text=Bere+draft"
+  },
+  {
+    id: "51",
+    name: "Madri 0.5L",
     price: "10",
     description: "Bere blondă românească, 500ml",
     category: "bere",
-    image: "/placeholder.svg?height=200&width=300&text=Ursus"
-  }
+    image: "/madri.jpg?height=200&width=300&text=Madri"
+  },
+  {
+    id: "52",
+    name: "Bergenbier 0% 0.5L",
+    price: "12",
+    description: "Bere blondă românească, 500ml",
+    category: "bere",
+    image: "/bergenbier-0.jpg?height=200&width=300&text=bergenbier+0%"
+  },
+  {
+    id: "53",
+    name: "Fresh 0% 0.33L",
+    price: "10",
+    description: "Bere blondă românească, 330ml",
+    category: "bere",
+    image: "/fresh.jpg?height=200&width=300&text=fresh+0%"
+  },
+  {
+    id: "54",
+    name: "Corona 0.35L",
+    price: "15",
+    description: "Bere blondă românească, 330ml",
+    category: "bere",
+    image: "/corona.jpg?height=200&width=300&text=Corona"
+  },
+  {
+    id: "55",
+    name: "Stella Artois 0.5L",
+    price: "15",
+    description: "Bere blondă românească, 500ml",
+    category: "bere",
+    image: "/stella.png?height=200&width=300&text=Stella+Artois"
+  },
 ]
 
 export default function MeniuBauturi() {

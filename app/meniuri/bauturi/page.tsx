@@ -384,7 +384,7 @@ const initialProducts: Product[] = [
     price: "40",
     description: "Vin roșu sec, cu arome de fructe negre și condimente",
     category: "vinuri",
-    image: "/feteasca-neagra.png?height=200&width=300&text=Feteasca+Neagra"
+    image: "/feteasca.png?height=200&width=300&text=Feteasca+Neagra"
   },
   {
     id: "43",

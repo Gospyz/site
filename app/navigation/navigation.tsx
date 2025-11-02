@@ -7,6 +7,7 @@ import { useState } from "react"
 
 export default function Navigation() {
     const [menuOpen, setMenuOpen] = useState(false)
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     return (
         <nav className="bg-black text-white">
             <div className="container mx-auto flex items-center justify-between px-4 py-2 z-999"
@@ -62,7 +63,10 @@ export default function Navigation() {
                     </Link>
                 </div>
 
-                <button className="md:hidden text-white">
+                <button 
+                    className="md:hidden text-white"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                >
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
                         className="h-6 w-6"
@@ -74,6 +78,70 @@ export default function Navigation() {
                     </svg>
                 </button>
             </div>
+
+            {/* Mobile Menu */}
+            {mobileMenuOpen && (
+                <div className="md:hidden bg-black border-t border-gray-700">
+                    <div className="px-4 py-2 space-y-1">
+                        <Link
+                            href="/"
+                            className="block px-3 py-2 text-amber-100 hover:text-amber-400 hover:bg-amber-900 rounded transition"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            Acasa
+                        </Link>
+                        
+                        <div className="px-3 py-2">
+                            <div className="text-amber-100 font-medium mb-2">Meniuri</div>
+                            <div className="pl-4 space-y-1">
+                                <Link
+                                    href="/meniuri/zilnic"
+                                    className="block px-3 py-2 text-sm text-amber-100 hover:text-amber-400 hover:bg-amber-900 rounded transition"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    Meniu Zilnic
+                                </Link>
+                                <Link
+                                    href="/meniuri/specialitati"
+                                    className="block px-3 py-2 text-sm text-amber-100 hover:text-amber-400 hover:bg-amber-900 rounded transition"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    Specialități
+                                </Link>
+                                <Link
+                                    href="/meniuri/bauturi"
+                                    className="block px-3 py-2 text-sm text-amber-100 hover:text-amber-400 hover:bg-amber-900 rounded transition"
+                                    onClick={() => setMobileMenuOpen(false)}
+                                >
+                                    Băuturi
+                                </Link>
+                            </div>
+                        </div>
+                        
+                        <Link
+                            href="/livrari-la-domiciliu"
+                            className="block px-3 py-2 text-amber-100 hover:text-amber-400 hover:bg-amber-900 rounded transition"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            Livrari la domiciliu
+                        </Link>
+                        <Link
+                            href="/galerie"
+                            className="block px-3 py-2 text-amber-100 hover:text-amber-400 hover:bg-amber-900 rounded transition"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            Galerie foto
+                        </Link>
+                        <Link
+                            href="/contact"
+                            className="block px-3 py-2 text-amber-100 hover:text-amber-400 hover:bg-amber-900 rounded transition"
+                            onClick={() => setMobileMenuOpen(false)}
+                        >
+                            Contact
+                        </Link>
+                    </div>
+                </div>
+            )}
         </nav>
     )
 }

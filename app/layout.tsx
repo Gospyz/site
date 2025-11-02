@@ -7,6 +7,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NODE_ENV === 'production' 
+    ? 'https://www.restaurantminish.ro' 
+    : 'http://localhost:3000'),
   title: "Restaurant Minish",
   description:
     "Restaurant tradițional cu preparate autentice, organizare de evenimente și servicii de livrare la domiciliu.",
